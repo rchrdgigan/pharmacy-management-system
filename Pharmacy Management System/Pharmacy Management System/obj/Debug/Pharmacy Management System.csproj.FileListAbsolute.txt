@@ -10,3 +10,10 @@ c:\users\admin\documents\visual studio 2015\Projects\Pharmacy Management System\
 C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\Pharmacy Management System.exe.config
 C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.exe
 C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.pdb
+C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\Pharmacy Management System.exe
+C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\Pharmacy Management System.pdb
+C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.DasboardForm.resources
+C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.Loginfrm.resources
+C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.Properties.Resources.resources
+C:\Users\admin\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.csproj.GenerateResource.Cache

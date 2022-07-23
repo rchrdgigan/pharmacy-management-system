@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DasboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DasboardForm.Designer.cs">
+      <DependentUpon>DasboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loginfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DasboardForm.resx">
+      <DependentUpon>DasboardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loginfrm.resx">
       <DependentUpon>Loginfrm.cs</DependentUpon>
     </EmbeddedResource>
