@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace Pharmacy_Management_System
 {
-    public partial class Loginfrm : Form
+    public partial class DasboardForm : Form
     {
-        public Loginfrm()
+        public DasboardForm()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void btnSignIn_Click(object sender, EventArgs e)
-        {
-            DasboardForm dsboard = new DasboardForm();
-            dsboard.ShowDialog();
         }
     }
 }
