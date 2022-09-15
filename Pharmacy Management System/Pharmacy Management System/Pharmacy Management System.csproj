@@ -60,6 +60,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucontroll\UCDispensing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucontroll\UCDispensing.Designer.cs">
+      <DependentUpon>UCDispensing.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucontroll\UCInventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ucontroll\UCDispensing.resx">
+      <DependentUpon>UCDispensing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucontroll\UCInventory.resx">
       <DependentUpon>UCInventory.cs</DependentUpon>
     </EmbeddedResource>

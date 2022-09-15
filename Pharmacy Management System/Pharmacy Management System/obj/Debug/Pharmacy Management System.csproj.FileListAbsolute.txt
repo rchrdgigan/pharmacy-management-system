@@ -29,3 +29,4 @@ C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Man
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UserControlHome.resources
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCInventory.resources
+C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCDispensing.resources
