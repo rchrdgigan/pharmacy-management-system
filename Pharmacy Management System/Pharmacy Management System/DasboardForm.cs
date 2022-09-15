@@ -70,5 +70,16 @@ namespace Pharmacy_Management_System
             panelContent.Controls.Add(b);
             b.BringToFront();
         }
+
+        private void btnMedCategory_Click(object sender, EventArgs e)
+        {
+            panelMark.Visible = true;
+            panelMark.Top = btnMedCategory.Top;
+            panelMark.Height = btnMedCategory.Height;
+
+            ucontroll.UCCategory b = new ucontroll.UCCategory();
+            panelContent.Controls.Add(b);
+            b.BringToFront();
+        }
     }
 }
