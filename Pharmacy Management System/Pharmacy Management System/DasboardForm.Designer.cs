@@ -36,14 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnUserList = new System.Windows.Forms.Button();
+            this.btnCustomerList = new System.Windows.Forms.Button();
+            this.btnSupplierList = new System.Windows.Forms.Button();
+            this.btnMedList = new System.Windows.Forms.Button();
+            this.btnMedType = new System.Windows.Forms.Button();
+            this.btnMedCategory = new System.Windows.Forms.Button();
+            this.btnReceiving = new System.Windows.Forms.Button();
+            this.btnDispensing = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,14 +70,14 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnUserList);
+            this.panel1.Controls.Add(this.btnCustomerList);
+            this.panel1.Controls.Add(this.btnSupplierList);
+            this.panel1.Controls.Add(this.btnMedList);
+            this.panel1.Controls.Add(this.btnMedType);
+            this.panel1.Controls.Add(this.btnMedCategory);
+            this.panel1.Controls.Add(this.btnReceiving);
+            this.panel1.Controls.Add(this.btnDispensing);
             this.panel1.Controls.Add(this.btnInventory);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -157,149 +157,150 @@
             this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button12.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnUserList
             // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(12, 547);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(157, 35);
-            this.button11.TabIndex = 10;
-            this.button11.Text = "User List";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnUserList.FlatAppearance.BorderSize = 0;
+            this.btnUserList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserList.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserList.ForeColor = System.Drawing.Color.White;
+            this.btnUserList.Image = ((System.Drawing.Image)(resources.GetObject("btnUserList.Image")));
+            this.btnUserList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserList.Location = new System.Drawing.Point(12, 547);
+            this.btnUserList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUserList.Name = "btnUserList";
+            this.btnUserList.Size = new System.Drawing.Size(157, 35);
+            this.btnUserList.TabIndex = 10;
+            this.btnUserList.Text = "User List";
+            this.btnUserList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUserList.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnCustomerList
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(12, 504);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(157, 35);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "Customer List";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnCustomerList.FlatAppearance.BorderSize = 0;
+            this.btnCustomerList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerList.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerList.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerList.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerList.Image")));
+            this.btnCustomerList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomerList.Location = new System.Drawing.Point(12, 504);
+            this.btnCustomerList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCustomerList.Name = "btnCustomerList";
+            this.btnCustomerList.Size = new System.Drawing.Size(157, 35);
+            this.btnCustomerList.TabIndex = 9;
+            this.btnCustomerList.Text = "Customer List";
+            this.btnCustomerList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomerList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCustomerList.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnSupplierList
             // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(12, 461);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(157, 35);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "Supplier List";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnSupplierList.FlatAppearance.BorderSize = 0;
+            this.btnSupplierList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupplierList.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplierList.ForeColor = System.Drawing.Color.White;
+            this.btnSupplierList.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierList.Image")));
+            this.btnSupplierList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSupplierList.Location = new System.Drawing.Point(12, 461);
+            this.btnSupplierList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSupplierList.Name = "btnSupplierList";
+            this.btnSupplierList.Size = new System.Drawing.Size(157, 35);
+            this.btnSupplierList.TabIndex = 8;
+            this.btnSupplierList.Text = "Supplier List";
+            this.btnSupplierList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSupplierList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSupplierList.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnMedList
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(12, 418);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(157, 35);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Medicine List";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnMedList.FlatAppearance.BorderSize = 0;
+            this.btnMedList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedList.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedList.ForeColor = System.Drawing.Color.White;
+            this.btnMedList.Image = ((System.Drawing.Image)(resources.GetObject("btnMedList.Image")));
+            this.btnMedList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMedList.Location = new System.Drawing.Point(12, 418);
+            this.btnMedList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMedList.Name = "btnMedList";
+            this.btnMedList.Size = new System.Drawing.Size(157, 35);
+            this.btnMedList.TabIndex = 6;
+            this.btnMedList.Text = "Medicine List";
+            this.btnMedList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMedList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMedList.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnMedType
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(12, 375);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(157, 35);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Medicine Types";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnMedType.FlatAppearance.BorderSize = 0;
+            this.btnMedType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedType.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedType.ForeColor = System.Drawing.Color.White;
+            this.btnMedType.Image = ((System.Drawing.Image)(resources.GetObject("btnMedType.Image")));
+            this.btnMedType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMedType.Location = new System.Drawing.Point(12, 375);
+            this.btnMedType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMedType.Name = "btnMedType";
+            this.btnMedType.Size = new System.Drawing.Size(157, 35);
+            this.btnMedType.TabIndex = 5;
+            this.btnMedType.Text = "Medicine Types";
+            this.btnMedType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMedType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMedType.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnMedCategory
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(12, 332);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(157, 35);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Medicine Category";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnMedCategory.FlatAppearance.BorderSize = 0;
+            this.btnMedCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedCategory.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedCategory.ForeColor = System.Drawing.Color.White;
+            this.btnMedCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnMedCategory.Image")));
+            this.btnMedCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMedCategory.Location = new System.Drawing.Point(12, 332);
+            this.btnMedCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMedCategory.Name = "btnMedCategory";
+            this.btnMedCategory.Size = new System.Drawing.Size(157, 35);
+            this.btnMedCategory.TabIndex = 4;
+            this.btnMedCategory.Text = "Medicine Category";
+            this.btnMedCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMedCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMedCategory.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnReceiving
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(12, 289);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(157, 35);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Receiving";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnReceiving.FlatAppearance.BorderSize = 0;
+            this.btnReceiving.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReceiving.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReceiving.ForeColor = System.Drawing.Color.White;
+            this.btnReceiving.Image = ((System.Drawing.Image)(resources.GetObject("btnReceiving.Image")));
+            this.btnReceiving.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceiving.Location = new System.Drawing.Point(12, 289);
+            this.btnReceiving.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReceiving.Name = "btnReceiving";
+            this.btnReceiving.Size = new System.Drawing.Size(157, 35);
+            this.btnReceiving.TabIndex = 3;
+            this.btnReceiving.Text = "Receiving";
+            this.btnReceiving.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceiving.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReceiving.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDispensing
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(12, 246);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(157, 35);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Dispensing";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDispensing.FlatAppearance.BorderSize = 0;
+            this.btnDispensing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDispensing.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDispensing.ForeColor = System.Drawing.Color.White;
+            this.btnDispensing.Image = ((System.Drawing.Image)(resources.GetObject("btnDispensing.Image")));
+            this.btnDispensing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDispensing.Location = new System.Drawing.Point(12, 246);
+            this.btnDispensing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDispensing.Name = "btnDispensing";
+            this.btnDispensing.Size = new System.Drawing.Size(157, 35);
+            this.btnDispensing.TabIndex = 2;
+            this.btnDispensing.Text = "Dispensing";
+            this.btnDispensing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDispensing.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDispensing.UseVisualStyleBackColor = true;
+            this.btnDispensing.Click += new System.EventHandler(this.btnDispensing_Click);
             // 
             // btnInventory
             // 
@@ -480,14 +481,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnUserList;
+        private System.Windows.Forms.Button btnCustomerList;
+        private System.Windows.Forms.Button btnSupplierList;
+        private System.Windows.Forms.Button btnMedList;
+        private System.Windows.Forms.Button btnMedType;
+        private System.Windows.Forms.Button btnMedCategory;
+        private System.Windows.Forms.Button btnReceiving;
+        private System.Windows.Forms.Button btnDispensing;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label5;
