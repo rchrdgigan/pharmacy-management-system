@@ -264,6 +264,7 @@
             this.btnMedCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMedCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMedCategory.UseVisualStyleBackColor = true;
+            this.btnMedCategory.Click += new System.EventHandler(this.btnMedCategory_Click);
             // 
             // btnReceiving
             // 
