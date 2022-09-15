@@ -21,5 +21,32 @@ namespace Pharmacy_Management_System
         {
             Application.Exit();
         }
+
+        private void DasboardForm_Load(object sender, EventArgs e)
+        {
+            btnHome.PerformClick();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            panelMark.Visible = true;
+            panelMark.Top = btnHome.Top;
+            panelMark.Height = btnHome.Height;
+
+            ucontroll.UserControlHome b = new ucontroll.UserControlHome();
+            panelContent.Controls.Add(b);
+            b.BringToFront();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            panelMark.Visible = true;
+            panelMark.Top = btnInventory.Top;
+            panelMark.Height = btnInventory.Height;
+
+            ucontroll.UCInventory b = new ucontroll.UCInventory();
+            panelContent.Controls.Add(b);
+            b.BringToFront();
+        }
     }
 }
