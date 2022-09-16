@@ -32,7 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductName,
+            this.name,
             this.StockIn,
             this.StockOut,
             this.StockAvailable});
@@ -81,12 +81,12 @@
             this.textBox1.Size = new System.Drawing.Size(325, 21);
             this.textBox1.TabIndex = 4;
             // 
-            // ProductName
+            // name
             // 
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 450;
+            this.name.HeaderText = "Drug Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 450;
             // 
             // StockIn
             // 
@@ -133,7 +133,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockAvailable;

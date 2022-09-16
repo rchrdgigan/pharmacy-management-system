@@ -78,6 +78,12 @@
     <Compile Include="ucontroll\UCInventory.Designer.cs">
       <DependentUpon>UCInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucontroll\UCMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucontroll\UCMedicine.Designer.cs">
+      <DependentUpon>UCMedicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucontroll\UCReceiving.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucontroll\UCInventory.resx">
       <DependentUpon>UCInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucontroll\UCMedicine.resx">
+      <DependentUpon>UCMedicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucontroll\UCReceiving.resx">
       <DependentUpon>UCReceiving.cs</DependentUpon>
