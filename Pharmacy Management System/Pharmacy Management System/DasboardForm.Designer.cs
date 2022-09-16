@@ -192,6 +192,7 @@
             this.btnCustomerList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomerList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCustomerList.UseVisualStyleBackColor = true;
+            this.btnCustomerList.Click += new System.EventHandler(this.btnCustomerList_Click);
             // 
             // btnSupplierList
             // 

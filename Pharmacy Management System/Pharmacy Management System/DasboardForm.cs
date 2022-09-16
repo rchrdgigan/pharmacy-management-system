@@ -114,5 +114,16 @@ namespace Pharmacy_Management_System
             panelContent.Controls.Add(b);
             b.BringToFront();
         }
+
+        private void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            panelMark.Visible = true;
+            panelMark.Top = btnCustomerList.Top;
+            panelMark.Height = btnCustomerList.Height;
+
+            ucontroll.UCCustomer b = new ucontroll.UCCustomer();
+            panelContent.Controls.Add(b);
+            b.BringToFront();
+        }
     }
 }
