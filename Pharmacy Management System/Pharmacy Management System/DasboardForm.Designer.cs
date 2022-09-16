@@ -210,6 +210,7 @@
             this.btnSupplierList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSupplierList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSupplierList.UseVisualStyleBackColor = true;
+            this.btnSupplierList.Click += new System.EventHandler(this.btnSupplierList_Click);
             // 
             // btnMedList
             // 
