@@ -103,5 +103,16 @@ namespace Pharmacy_Management_System
             panelContent.Controls.Add(b);
             b.BringToFront();
         }
+
+        private void btnSupplierList_Click(object sender, EventArgs e)
+        {
+            panelMark.Visible = true;
+            panelMark.Top = btnSupplierList.Top;
+            panelMark.Height = btnSupplierList.Height;
+
+            ucontroll.UCSupplier b = new ucontroll.UCSupplier();
+            panelContent.Controls.Add(b);
+            b.BringToFront();
+        }
     }
 }

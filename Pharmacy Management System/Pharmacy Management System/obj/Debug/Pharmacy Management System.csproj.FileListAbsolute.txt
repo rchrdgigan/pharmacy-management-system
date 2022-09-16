@@ -34,3 +34,4 @@ C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Man
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCCategory.resources
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCType.resources
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCMedicine.resources
+C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCSupplier.resources

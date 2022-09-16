@@ -90,6 +90,12 @@
     <Compile Include="ucontroll\UCReceiving.Designer.cs">
       <DependentUpon>UCReceiving.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucontroll\UCSupplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucontroll\UCSupplier.Designer.cs">
+      <DependentUpon>UCSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucontroll\UCType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucontroll\UCReceiving.resx">
       <DependentUpon>UCReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucontroll\UCSupplier.resx">
+      <DependentUpon>UCSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucontroll\UCType.resx">
       <DependentUpon>UCType.cs</DependentUpon>
