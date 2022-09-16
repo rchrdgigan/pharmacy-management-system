@@ -108,6 +108,12 @@
     <Compile Include="ucontroll\UCType.Designer.cs">
       <DependentUpon>UCType.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucontroll\UCUserManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucontroll\UCUserManagement.Designer.cs">
+      <DependentUpon>UCUserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucontroll\UserControlHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucontroll\UCType.resx">
       <DependentUpon>UCType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucontroll\UCUserManagement.resx">
+      <DependentUpon>UCUserManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucontroll\UserControlHome.resx">
       <DependentUpon>UserControlHome.cs</DependentUpon>
