@@ -170,10 +170,11 @@
             this.btnUserList.Name = "btnUserList";
             this.btnUserList.Size = new System.Drawing.Size(157, 35);
             this.btnUserList.TabIndex = 10;
-            this.btnUserList.Text = "User List";
+            this.btnUserList.Text = "Account";
             this.btnUserList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUserList.UseVisualStyleBackColor = true;
+            this.btnUserList.Click += new System.EventHandler(this.btnUserList_Click);
             // 
             // btnCustomerList
             // 
