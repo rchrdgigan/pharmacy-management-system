@@ -66,6 +66,12 @@
     <Compile Include="ucontroll\UCCategory.Designer.cs">
       <DependentUpon>UCCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucontroll\UCCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucontroll\UCCustomer.Designer.cs">
+      <DependentUpon>UCCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucontroll\UCDispensing.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="ucontroll\UCCategory.resx">
       <DependentUpon>UCCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucontroll\UCCustomer.resx">
+      <DependentUpon>UCCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucontroll\UCDispensing.resx">
       <DependentUpon>UCDispensing.cs</DependentUpon>
