@@ -37,3 +37,24 @@ C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Man
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCSupplier.resources
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCCustomer.resources
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCUserManagement.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\Pharmacy Management System.exe.config
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.exe
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.pdb
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\Pharmacy Management System.exe
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\Pharmacy Management System.pdb
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.DasboardForm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.Loginfrm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.Properties.Resources.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCCategory.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCCustomer.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCDispensing.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCInventory.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCMedicine.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCReceiving.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCSupplier.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCType.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UCUserManagement.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UserControlHome.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.csproj.GenerateResource.Cache
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\MySql.Data.dll
