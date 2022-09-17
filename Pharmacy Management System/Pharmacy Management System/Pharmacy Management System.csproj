@@ -49,7 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="class\CategoryClass.cs" />
     <Compile Include="class\ConnectionClass.cs" />
+    <Compile Include="class\TypeClass.cs" />
+    <Compile Include="class\UserClass.cs" />
     <Compile Include="DasboardForm.cs">
       <SubType>Form</SubType>
     </Compile>

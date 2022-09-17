@@ -24,6 +24,9 @@ namespace Pharmacy_Management_System
 
         private void DasboardForm_Load(object sender, EventArgs e)
         {
+
+            lbl_name.Text = Loginfrm._fname;
+            lbl_role.Text = Loginfrm._role;
             btnHome.PerformClick();
         }
 
@@ -135,6 +138,20 @@ namespace Pharmacy_Management_System
             ucontroll.UCUserManagement b = new ucontroll.UCUserManagement();
             panelContent.Controls.Add(b);
             b.BringToFront();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure want to logout?";
+            string title = "Logout";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                Loginfrm loginFrm = new Loginfrm();
+                loginFrm.Show();
+            }
         }
     }
 }
