@@ -14,6 +14,7 @@ namespace Pharmacy_Management_System
         public DataTable dtable { get; set; }
         public string cat_name { get; set; }
         public string _id { get; set; }
+        public string _catid { get; set; }
         public long modifId { get; set; }
         public string message { get; set; }
         public Int32 count { get; set; }
@@ -90,6 +91,20 @@ namespace Pharmacy_Management_System
             {
                 message = "error" + ex.ToString();
             }
+        }
+
+        public void selectCategory(string cat_name)
+        {
+            con.Open();
+            string query = "";
+            query = "SELECT * FROM categories WHERE cat_name='" + cat_name + "'";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                _catid = dr["id"].ToString();
+            }
+            con.Close();
         }
     }
 }

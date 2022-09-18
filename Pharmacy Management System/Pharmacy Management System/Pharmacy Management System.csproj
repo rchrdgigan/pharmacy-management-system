@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="class\CategoryClass.cs" />
     <Compile Include="class\ConnectionClass.cs" />
+    <Compile Include="class\MedicineClass.cs" />
     <Compile Include="class\TypeClass.cs" />
     <Compile Include="class\UserClass.cs" />
     <Compile Include="DasboardForm.cs">

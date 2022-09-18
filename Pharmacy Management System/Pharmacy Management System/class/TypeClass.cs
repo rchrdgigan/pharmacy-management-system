@@ -14,6 +14,7 @@ namespace Pharmacy_Management_System
         public DataTable dtable { get; set; }
         public string type_name { get; set; }
         public string _id { get; set; }
+        public string _typeid { get; set; }
         public long modifId { get; set; }
         public string message { get; set; }
         public Int32 count { get; set; }
@@ -70,7 +71,6 @@ namespace Pharmacy_Management_System
             }
         }
 
-
         public void delete(int id)
         {
             try
@@ -90,6 +90,19 @@ namespace Pharmacy_Management_System
             {
                 message = "error" + ex.ToString();
             }
+        }
+        public void selectType(string type_name)
+        {
+            con.Open();
+            string query = "";
+            query = "SELECT * FROM types WHERE type_name='" + type_name + "'";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                _typeid = dr["id"].ToString();
+            }
+            con.Close();
         }
     }
 }
