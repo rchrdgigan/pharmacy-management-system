@@ -19,6 +19,7 @@ namespace Pharmacy_Management_System
         public string measurement { get; set; }
         public string description { get; set; }
         public bool prescription { get; set; }
+        public string _medicineid { get; set; }
         public string _id { get; set; }
         public long modifId { get; set; }
         public string message { get; set; }
@@ -128,6 +129,21 @@ namespace Pharmacy_Management_System
             {
                 message = "error" + ex.ToString();
             }
+        }
+        public void selectMedicine(string medicine_name)
+        {
+            con.Open();
+            string query = "";
+            query = "SELECT * FROM medicines WHERE drug_name='" + medicine_name + "'";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                _medicineid = dr["id"].ToString();
+                drug_name = dr["drug_name"].ToString();
+                description = dr["description"].ToString();
+            }
+            con.Close();
         }
 
     }

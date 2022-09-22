@@ -12,6 +12,10 @@ namespace Pharmacy_Management_System
 {
     public partial class DasboardForm : Form
     {
+        public static Panel p_Content;
+        public static Panel p_Navigation;
+        public static Button b_receiving;
+
         public DasboardForm()
         {
             InitializeComponent();
@@ -24,6 +28,9 @@ namespace Pharmacy_Management_System
 
         private void DasboardForm_Load(object sender, EventArgs e)
         {
+            p_Content = panelContent;
+            p_Navigation = panelNavigation;
+            b_receiving = btnReceiving;
 
             lbl_name.Text = Loginfrm._fname;
             lbl_role.Text = Loginfrm._role;

@@ -52,6 +52,8 @@
     <Compile Include="class\CategoryClass.cs" />
     <Compile Include="class\ConnectionClass.cs" />
     <Compile Include="class\MedicineClass.cs" />
+    <Compile Include="class\ReceivingClass.cs" />
+    <Compile Include="class\SupplierClass.cs" />
     <Compile Include="class\TypeClass.cs" />
     <Compile Include="class\UserClass.cs" />
     <Compile Include="DasboardForm.cs">
@@ -59,6 +61,18 @@
     </Compile>
     <Compile Include="DasboardForm.Designer.cs">
       <DependentUpon>DasboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EditReceivingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EditReceivingFrm.Designer.cs">
+      <DependentUpon>EditReceivingFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\ReceivingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\ReceivingFrm.Designer.cs">
+      <DependentUpon>ReceivingFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Loginfrm.cs">
       <SubType>Form</SubType>
@@ -131,6 +145,12 @@
     <EmbeddedResource Include="DasboardForm.resx">
       <DependentUpon>DasboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\EditReceivingFrm.resx">
+      <DependentUpon>EditReceivingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\ReceivingFrm.resx">
+      <DependentUpon>ReceivingFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Loginfrm.resx">
       <DependentUpon>Loginfrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,9 +206,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="form\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -88,7 +88,7 @@ namespace Pharmacy_Management_System.ucontroll
                 string data_id = row.Cells["id"].Value.ToString();
                 if (columnName == "colDel")
                 {
-                    DialogResult result = MessageBox.Show("Are you sure want to delete this data?\n\nWarring : This data will be deleted permanently and you can't undo this action!", "Deleting Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MessageBox.Show("Are you sure want to delete this data?\n\nWarring : This data will be deleted permanently and affect the medicine data if connected in this category and you cannot undo or restore data!", "Deleting Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
                         cat.delete(int.Parse(data_id));

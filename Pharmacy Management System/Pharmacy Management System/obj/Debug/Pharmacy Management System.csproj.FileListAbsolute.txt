@@ -58,3 +58,5 @@ C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Phar
 C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.ucontroll.UserControlHome.resources
 C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy Management System.csproj.GenerateResource.Cache
 C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\MySql.Data.dll
+C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.ReceivingFrm.resources
+C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.EditReceivingFrm.resources

@@ -1,0 +1,148 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms;
+
+namespace Pharmacy_Management_System.form
+{
+    public partial class ReceivingFrm : Form
+    {
+        ConnectionClass cc = new ConnectionClass();
+        SupplierClass sc = new SupplierClass();
+        ReceivingClass rc = new ReceivingClass();
+        MedicineClass mc = new MedicineClass();
+        string _supplier_id;
+        string _medicine_id;
+        string _medicine_name;
+        string _medicine_description;
+
+        public ReceivingFrm()
+        {
+            InitializeComponent();
+        }
+
+        public void loadSupplier()
+        {
+            sc.list();
+            foreach (DataRow item in sc.dtable.Rows)
+            {
+                comboBoxSupplier.Items.Add(item[1].ToString());
+            }
+        }
+
+        public void loadMedicine()
+        {
+            mc.list();
+            foreach (DataRow item in mc.dtable.Rows)
+            {
+                comboBoxMedicine.Items.Add(item[4].ToString() + "|" + item[1].ToString());
+            }
+        }
+
+        public void loadRandomId()
+        {
+            rc.maxId();
+            Random rnd = new Random();
+            int number = rnd.Next(10000, 99999);
+            string sum_ref_id = number + rc._maxid.ToString();
+            textBoxRefNo.Text = "BS"+sum_ref_id;
+        }
+
+        private void ReceivingFrm_Load(object sender, EventArgs e)
+        {
+            DasboardForm.p_Navigation.Enabled = false;
+            DasboardForm.p_Content.Enabled = false;
+
+            this.TopMost = true;
+
+            loadSupplier();
+            loadMedicine();
+            loadRandomId();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DasboardForm.p_Navigation.Enabled = true;
+            DasboardForm.p_Content.Enabled = true;
+
+            this.Close();
+        }
+
+        private void comboBoxSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            sc.selectSupplier(comboBoxSupplier.Text);
+            _supplier_id = sc._supplierid;
+        }
+
+        private void comboBoxMedicine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string valueStr = comboBoxMedicine.Text;
+            var vals = valueStr.Split('|')[0];
+            mc.selectMedicine(vals);
+            _medicine_id = mc._medicineid;
+
+            _medicine_name = mc.drug_name;
+            _medicine_description = mc.description;
+        }
+
+        private void btnAddList_Click(object sender, EventArgs e)
+        {
+            int i = dataGridView1.Rows.Add();
+            dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
+            dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
+            dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
+            dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
+
+            comboBoxMedicine.Text = "";
+            textBoxQty.Clear();
+        }
+
+        public void createStockIn()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                cc.con.Close();
+                cc.con.Open();
+                string query = ("INSERT INTO `in_stocks`(`transaction_in_id`, `medicine_id`, `qty`, `created_at`) VALUES ('" + rc.lastId + "','" + dataGridView1.Rows[i].Cells[0].Value + "', '" + dataGridView1.Rows[i].Cells[3].Value + "', Now());");
+                MySqlCommand cmd = new MySqlCommand(query, cc.con);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_supplier_id))
+            {
+                MessageBox.Show("Please select default supplier in supplier entry!");
+            }
+            else
+            {
+                rc.supplier_id = int.Parse(_supplier_id);
+                rc.refno = textBoxRefNo.Text;
+                rc.createTransactionIn();
+                
+                if (string.IsNullOrEmpty(rc.lastId))
+                {
+                    MessageBox.Show("Transaction not created!");
+                }
+                else
+                {
+                    createStockIn();
+                    MessageBox.Show("" + rc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    DasboardForm.p_Navigation.Enabled = true;
+                    DasboardForm.p_Content.Enabled = true;
+                    DasboardForm.b_receiving.PerformClick();
+                    this.Close();
+                }
+            }
+        }
+
+    }
+}

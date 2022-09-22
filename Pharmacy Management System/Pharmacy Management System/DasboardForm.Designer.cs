@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DasboardForm));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelNavigation = new System.Windows.Forms.Panel();
             this.panelMark = new System.Windows.Forms.Panel();
             this.lbl_role = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
@@ -55,37 +55,37 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button13 = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.panelNavigation.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelNavigation
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.panelMark);
-            this.panel1.Controls.Add(this.lbl_role);
-            this.panel1.Controls.Add(this.lbl_name);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.btnUserList);
-            this.panel1.Controls.Add(this.btnCustomerList);
-            this.panel1.Controls.Add(this.btnSupplierList);
-            this.panel1.Controls.Add(this.btnMedList);
-            this.panel1.Controls.Add(this.btnMedType);
-            this.panel1.Controls.Add(this.btnMedCategory);
-            this.panel1.Controls.Add(this.btnReceiving);
-            this.panel1.Controls.Add(this.btnDispensing);
-            this.panel1.Controls.Add(this.btnInventory);
-            this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(169, 720);
-            this.panel1.TabIndex = 0;
+            this.panelNavigation.BackColor = System.Drawing.Color.SteelBlue;
+            this.panelNavigation.Controls.Add(this.panelMark);
+            this.panelNavigation.Controls.Add(this.lbl_role);
+            this.panelNavigation.Controls.Add(this.lbl_name);
+            this.panelNavigation.Controls.Add(this.label2);
+            this.panelNavigation.Controls.Add(this.label1);
+            this.panelNavigation.Controls.Add(this.button12);
+            this.panelNavigation.Controls.Add(this.btnUserList);
+            this.panelNavigation.Controls.Add(this.btnCustomerList);
+            this.panelNavigation.Controls.Add(this.btnSupplierList);
+            this.panelNavigation.Controls.Add(this.btnMedList);
+            this.panelNavigation.Controls.Add(this.btnMedType);
+            this.panelNavigation.Controls.Add(this.btnMedCategory);
+            this.panelNavigation.Controls.Add(this.btnReceiving);
+            this.panelNavigation.Controls.Add(this.btnDispensing);
+            this.panelNavigation.Controls.Add(this.btnInventory);
+            this.panelNavigation.Controls.Add(this.btnHome);
+            this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelNavigation.Location = new System.Drawing.Point(0, 0);
+            this.panelNavigation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelNavigation.Name = "panelNavigation";
+            this.panelNavigation.Size = new System.Drawing.Size(169, 720);
+            this.panelNavigation.TabIndex = 0;
             // 
             // panelMark
             // 
@@ -461,7 +461,7 @@
             this.ClientSize = new System.Drawing.Size(1250, 720);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelNavigation);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -469,8 +469,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DasboardForm";
             this.Load += new System.EventHandler(this.DasboardForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelNavigation.ResumeLayout(false);
+            this.panelNavigation.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -481,7 +481,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelNavigation;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_role;
