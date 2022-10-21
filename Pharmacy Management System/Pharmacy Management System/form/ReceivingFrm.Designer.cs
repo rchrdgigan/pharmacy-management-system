@@ -32,11 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.medicine_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicine_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
@@ -48,6 +43,11 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.textBoxRefNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.medicine_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicine_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -84,52 +84,13 @@
             this.medicine_name,
             this.medicine_description,
             this.qty,
-            this.delete});
+            this.colDel});
             this.dataGridView1.Location = new System.Drawing.Point(20, 157);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(791, 333);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // medicine_id
-            // 
-            this.medicine_id.HeaderText = "";
-            this.medicine_id.Name = "medicine_id";
-            this.medicine_id.ReadOnly = true;
-            this.medicine_id.Visible = false;
-            // 
-            // medicine_name
-            // 
-            this.medicine_name.HeaderText = "Medicine Name";
-            this.medicine_name.Name = "medicine_name";
-            this.medicine_name.ReadOnly = true;
-            this.medicine_name.Width = 300;
-            // 
-            // medicine_description
-            // 
-            this.medicine_description.HeaderText = "Medicine Description";
-            this.medicine_description.Name = "medicine_description";
-            this.medicine_description.ReadOnly = true;
-            this.medicine_description.Width = 250;
-            // 
-            // qty
-            // 
-            this.qty.HeaderText = "Quantity";
-            this.qty.Name = "qty";
-            this.qty.ReadOnly = true;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle1;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.HeaderText = "Remove";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Text = "Delete";
-            this.delete.UseColumnTextForButtonValue = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnSave
             // 
@@ -244,6 +205,46 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "Ref. No";
             // 
+            // medicine_id
+            // 
+            this.medicine_id.HeaderText = "";
+            this.medicine_id.Name = "medicine_id";
+            this.medicine_id.ReadOnly = true;
+            this.medicine_id.Visible = false;
+            // 
+            // medicine_name
+            // 
+            this.medicine_name.HeaderText = "Medicine Name";
+            this.medicine_name.Name = "medicine_name";
+            this.medicine_name.ReadOnly = true;
+            this.medicine_name.Width = 300;
+            // 
+            // medicine_description
+            // 
+            this.medicine_description.HeaderText = "Medicine Description";
+            this.medicine_description.Name = "medicine_description";
+            this.medicine_description.ReadOnly = true;
+            this.medicine_description.Width = 250;
+            // 
+            // qty
+            // 
+            this.qty.HeaderText = "Quantity";
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            // 
+            // colDel
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDel.HeaderText = "Remove";
+            this.colDel.Name = "colDel";
+            this.colDel.ReadOnly = true;
+            this.colDel.Text = "Delete";
+            this.colDel.UseColumnTextForButtonValue = true;
+            // 
             // ReceivingFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -288,16 +289,16 @@
         private System.Windows.Forms.ComboBox comboBoxSupplier;
         private System.Windows.Forms.ComboBox comboBoxMedicine;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.TextBox textBoxQty;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAddList;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox textBoxRefNo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewButtonColumn colDel;
     }
 }

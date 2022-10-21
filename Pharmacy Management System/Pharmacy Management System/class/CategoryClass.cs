@@ -106,5 +106,30 @@ namespace Pharmacy_Management_System
             }
             con.Close();
         }
+
+        public bool checkIfExist()
+        {
+            con.Close();
+            con.Open();
+
+            bool check = false;
+            using (var cmd = new MySqlCommand())
+            {
+                cmd.CommandText = "SELECT * FROM categories WHERE cat_name=@cat_name";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = con;
+
+                cmd.Parameters.Add("@cat_name", MySqlDbType.VarChar).Value = cat_name;
+
+                msdtr = cmd.ExecuteReader();
+
+                while (msdtr.Read())
+                {
+                    check = true;
+                }
+                con.Close();
+            }
+            return check;
+        }
     }
 }

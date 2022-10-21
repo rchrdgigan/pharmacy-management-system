@@ -165,6 +165,7 @@
             this.error_lbl.Size = new System.Drawing.Size(284, 32);
             this.error_lbl.TabIndex = 9;
             this.error_lbl.Text = "Error : User account does not exist! Please input\r\nvalid credentials.";
+            this.error_lbl.Visible = false;
             // 
             // label12
             // 

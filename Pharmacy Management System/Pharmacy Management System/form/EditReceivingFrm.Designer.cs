@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,13 +41,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.medicine_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicine_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicine_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +119,7 @@
             this.btnAddList.TabIndex = 38;
             this.btnAddList.Text = "Add to List";
             this.btnAddList.UseVisualStyleBackColor = false;
+            this.btnAddList.Click += new System.EventHandler(this.btnAddList_Click);
             // 
             // label4
             // 
@@ -171,19 +172,20 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Supplier";
             // 
-            // btnSave
+            // btnUpdate
             // 
-            this.btnSave.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(657, 508);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(154, 32);
-            this.btnSave.TabIndex = 31;
-            this.btnSave.Text = "Update";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(657, 508);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(154, 32);
+            this.btnUpdate.TabIndex = 31;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dataGridView1
             // 
@@ -193,17 +195,19 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.medicine_id,
             this.medicine_name,
-            this.medicine_description,
+            this.medicine_desc,
             this.qty,
-            this.delete});
+            this.colDel});
             this.dataGridView1.Location = new System.Drawing.Point(20, 157);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(791, 333);
             this.dataGridView1.TabIndex = 30;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // medicine_id
             // 
+            this.medicine_id.DataPropertyName = "medicine_id";
             this.medicine_id.HeaderText = "";
             this.medicine_id.Name = "medicine_id";
             this.medicine_id.ReadOnly = true;
@@ -211,36 +215,39 @@
             // 
             // medicine_name
             // 
+            this.medicine_name.DataPropertyName = "drug_name";
             this.medicine_name.HeaderText = "Medicine Name";
             this.medicine_name.Name = "medicine_name";
             this.medicine_name.ReadOnly = true;
             this.medicine_name.Width = 300;
             // 
-            // medicine_description
+            // medicine_desc
             // 
-            this.medicine_description.HeaderText = "Medicine Description";
-            this.medicine_description.Name = "medicine_description";
-            this.medicine_description.ReadOnly = true;
-            this.medicine_description.Width = 250;
+            this.medicine_desc.DataPropertyName = "description";
+            this.medicine_desc.HeaderText = "Medicine Description";
+            this.medicine_desc.Name = "medicine_desc";
+            this.medicine_desc.ReadOnly = true;
+            this.medicine_desc.Width = 250;
             // 
             // qty
             // 
+            this.qty.DataPropertyName = "qty";
             this.qty.HeaderText = "Quantity";
             this.qty.Name = "qty";
             this.qty.ReadOnly = true;
             // 
-            // delete
+            // colDel
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle9;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.HeaderText = "Remove";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Text = "Delete";
-            this.delete.UseColumnTextForButtonValue = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDel.HeaderText = "Remove";
+            this.colDel.Name = "colDel";
+            this.colDel.ReadOnly = true;
+            this.colDel.Text = "Delete";
+            this.colDel.UseColumnTextForButtonValue = true;
             // 
             // EditReceivingFrm
             // 
@@ -258,7 +265,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxSupplier);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F);
@@ -290,12 +297,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxSupplier;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicine_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicine_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_desc;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.DataGridViewButtonColumn colDel;
     }
 }

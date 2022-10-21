@@ -34,6 +34,7 @@ namespace Pharmacy_Management_System
 
             if (usernameTxtBox.Text == "" && passwordTxtBox.Text == "")
             {
+                error_lbl.Visible = false;
                 usernameTxtBox.BackColor = Color.MistyRose;
                 passwordTxtBox.BackColor = Color.MistyRose;
                 MessageBox.Show("Please input username and password...", "Remember", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -42,12 +43,14 @@ namespace Pharmacy_Management_System
             {
                 if (usernameTxtBox.Text == "")
                 {
+                    error_lbl.Visible = false;
                     usernameTxtBox.BackColor = Color.MistyRose;
                     passwordTxtBox.BackColor = DefaultBackColor;
                     MessageBox.Show("Please input username...", "Remember", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (passwordTxtBox.Text == "")
                 {
+                    error_lbl.Visible = false;
                     passwordTxtBox.BackColor = Color.MistyRose;
                     usernameTxtBox.BackColor = DefaultBackColor;
                     MessageBox.Show("Please input password...", "Remember", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -59,6 +62,7 @@ namespace Pharmacy_Management_System
                     bool verify = uc.userVerification();
                     if (verify == true)
                     {
+                        error_lbl.Visible = false;
                         MessageBox.Show("Successfully Login!", "Succeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _role = uc.role;
                         _username = uc.username;
@@ -71,7 +75,7 @@ namespace Pharmacy_Management_System
                     }
                     else
                     {
-                        MessageBox.Show("User does not exist!", "User Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        error_lbl.Visible = true;
                         usernameTxtBox.Clear();
                         passwordTxtBox.Clear();
                         usernameTxtBox.BackColor = DefaultBackColor;

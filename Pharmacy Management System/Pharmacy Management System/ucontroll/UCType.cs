@@ -44,10 +44,19 @@ namespace Pharmacy_Management_System.ucontroll
             else
             {
                 tc.type_name = textBoxTypeName.Text;
-                tc.create();
-                MessageBox.Show("" + tc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clearText();
-                loadData();
+                bool _if_exist = tc.checkIfExist();
+                if (_if_exist == true)
+                {
+                    MessageBox.Show("Type already exist!", "Warring", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    tc.create();
+                    MessageBox.Show("" + tc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearText();
+                    loadData();
+                }
+               
             }
         }
 

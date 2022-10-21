@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace Pharmacy_Management_System.form
@@ -55,6 +56,13 @@ namespace Pharmacy_Management_System.form
             textBoxRefNo.Text = refno;
         }
 
+        public void loadMedicineTransac()
+        {
+            rc.listMedicine(int.Parse(_trans_id));
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = rc.dtable;
+        }
+
         private void EditReceivingFrm_Load(object sender, EventArgs e)
         {
             DasboardForm.p_Navigation.Enabled = false;
@@ -64,6 +72,7 @@ namespace Pharmacy_Management_System.form
 
             loadSupplier();
             loadMedicine();
+            loadMedicineTransac();
             loadText();
         }
 
@@ -73,6 +82,71 @@ namespace Pharmacy_Management_System.form
             DasboardForm.p_Content.Enabled = true;
 
             this.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+            string columnName = dataGridView1.Columns[columnIndex].Name;
+            try
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                if (columnName == "colDel")
+                {
+                    foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
+                    {
+                        if (oneCell.Selected)
+                            dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void createStockIn()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                cc.con.Close();
+                cc.con.Open();
+                string query = ("INSERT INTO `in_stocks`(`transaction_in_id`, `medicine_id`, `qty`, `created_at`) VALUES ('" + _trans_id + "','" + dataGridView1.Rows[i].Cells[0].Value + "', '" + dataGridView1.Rows[i].Cells[3].Value + "', Now());");
+                MySqlCommand cmd = new MySqlCommand(query, cc.con);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count < 1)
+            {
+                MessageBox.Show("Medicine is required! Please select medicine data and add qty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                rc.delStockIn(int.Parse(_trans_id));
+                createStockIn();
+                MessageBox.Show("Successfully Updated!", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DasboardForm.p_Navigation.Enabled = true;
+                DasboardForm.p_Content.Enabled = true;
+                DasboardForm.b_receiving.PerformClick();
+                this.Close();
+            }
+        }
+
+        private void btnAddList_Click(object sender, EventArgs e)
+        {
+            int i = dataGridView1.Rows.Add();
+            dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
+            dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
+            dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
+            dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
+
+            comboBoxMedicine.Text = "";
+            textBoxQty.Clear();
         }
     }
 }

@@ -40,14 +40,21 @@ namespace Pharmacy_Management_System.ucontroll
             if (textBoxCatName.Text == "")
             {
                 MessageBox.Show("Please category name entry!", "Remember", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
+            }else {
                 cat.cat_name = textBoxCatName.Text;
-                cat.create();
-                MessageBox.Show("" + cat.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clearText();
-                loadData();
+                bool _if_exist = cat.checkIfExist();
+                if (_if_exist == true)
+                {
+                    MessageBox.Show("Category already exist!", "Warring", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    cat.create();
+                    MessageBox.Show("" + cat.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearText();
+                    loadData();
+                }
+               
             }
         }
 

@@ -119,30 +119,56 @@ namespace Pharmacy_Management_System.form
         {
             if (string.IsNullOrEmpty(_supplier_id))
             {
-                MessageBox.Show("Please select default supplier in supplier entry!");
+                MessageBox.Show("Please select default supplier in supplier entry!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                rc.supplier_id = int.Parse(_supplier_id);
-                rc.refno = textBoxRefNo.Text;
-                rc.createTransactionIn();
-                
-                if (string.IsNullOrEmpty(rc.lastId))
+                if (dataGridView1.Rows.Count < 1)
                 {
-                    MessageBox.Show("Transaction not created!");
-                }
-                else
-                {
-                    createStockIn();
-                    MessageBox.Show("" + rc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Medicine is required! Please select medicine data and add qty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }else{
+                    rc.supplier_id = int.Parse(_supplier_id);
+                    rc.refno = textBoxRefNo.Text;
+                    rc.createTransactionIn();
 
-                    DasboardForm.p_Navigation.Enabled = true;
-                    DasboardForm.p_Content.Enabled = true;
-                    DasboardForm.b_receiving.PerformClick();
-                    this.Close();
+                    if (string.IsNullOrEmpty(rc.lastId))
+                    {
+                        MessageBox.Show("Transaction not created!");
+                    }
+                    else
+                    {
+                        createStockIn();
+                        MessageBox.Show("" + rc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        DasboardForm.p_Navigation.Enabled = true;
+                        DasboardForm.p_Content.Enabled = true;
+                        DasboardForm.b_receiving.PerformClick();
+                        this.Close();
+                    }
                 }
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+            string columnName = dataGridView1.Columns[columnIndex].Name;
+            try
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                if (columnName == "colDel")
+                {
+                    foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
+                    {
+                        if (oneCell.Selected)
+                            dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
