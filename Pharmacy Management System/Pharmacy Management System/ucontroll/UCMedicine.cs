@@ -31,6 +31,7 @@ namespace Pharmacy_Management_System.ucontroll
             foreach (DataRow item in cat.dtable.Rows)
             {
                 comboBoxCat.Items.Add(item[1].ToString());
+                comboBoxCat.AutoCompleteCustomSource.Add(item[1].ToString());
             }
         }
 
@@ -66,6 +67,7 @@ namespace Pharmacy_Management_System.ucontroll
             foreach (DataRow item in tc.dtable.Rows)
             {
                 comboBoxType.Items.Add(item[1].ToString());
+                comboBoxType.AutoCompleteCustomSource.Add(item[1].ToString());
             }
         }
 

@@ -60,7 +60,15 @@ namespace Pharmacy_Management_System.form
         {
             rc.listMedicine(int.Parse(_trans_id));
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = rc.dtable;
+            dataGridView1.Rows.Clear();
+            foreach (DataRow item in rc.dtable.Rows)
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = item[2];
+                dataGridView1.Rows[n].Cells[1].Value = item[4];
+                dataGridView1.Rows[n].Cells[2].Value = item[5];
+                dataGridView1.Rows[n].Cells[3].Value = item[3];
+            }
         }
 
         private void EditReceivingFrm_Load(object sender, EventArgs e)
@@ -122,7 +130,7 @@ namespace Pharmacy_Management_System.form
         {
             if (dataGridView1.Rows.Count < 1)
             {
-                MessageBox.Show("Medicine is required! Please select medicine data and add qty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Generic name is required! Please select generic name data and add qty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -139,14 +147,34 @@ namespace Pharmacy_Management_System.form
 
         private void btnAddList_Click(object sender, EventArgs e)
         {
-            int i = dataGridView1.Rows.Add();
-            dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
-            dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
-            dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
-            dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
+            if (!string.IsNullOrEmpty(textBoxQty.Text))
+            {
+                int i = dataGridView1.Rows.Add();
+                dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
+                dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
+                dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
+                dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
+                comboBoxMedicine.Text = "";
+                textBoxQty.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Quantity is required! Please add quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
 
-            comboBoxMedicine.Text = "";
-            textBoxQty.Clear();
+            
+        }
+
+        private void comboBoxMedicine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string valueStr = comboBoxMedicine.Text;
+            var vals = valueStr.Split('|')[0];
+            mc.selectMedicine(vals);
+            _medicine_id = mc._medicineid;
+
+            _medicine_name = mc.drug_name;
+            _medicine_description = mc.description;
         }
     }
 }

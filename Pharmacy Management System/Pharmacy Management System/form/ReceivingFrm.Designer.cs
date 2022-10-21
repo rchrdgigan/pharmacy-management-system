@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -128,9 +128,9 @@
             // comboBoxMedicine
             // 
             this.comboBoxMedicine.FormattingEnabled = true;
-            this.comboBoxMedicine.Location = new System.Drawing.Point(82, 125);
+            this.comboBoxMedicine.Location = new System.Drawing.Point(110, 125);
             this.comboBoxMedicine.Name = "comboBoxMedicine";
-            this.comboBoxMedicine.Size = new System.Drawing.Size(287, 24);
+            this.comboBoxMedicine.Size = new System.Drawing.Size(259, 24);
             this.comboBoxMedicine.TabIndex = 23;
             this.comboBoxMedicine.SelectedIndexChanged += new System.EventHandler(this.comboBoxMedicine_SelectedIndexChanged);
             // 
@@ -139,9 +139,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 22;
-            this.label3.Text = "Medicine";
+            this.label3.Text = "Generic Name";
             // 
             // textBoxQty
             // 
@@ -214,14 +214,14 @@
             // 
             // medicine_name
             // 
-            this.medicine_name.HeaderText = "Medicine Name";
+            this.medicine_name.HeaderText = "Generic Name";
             this.medicine_name.Name = "medicine_name";
             this.medicine_name.ReadOnly = true;
             this.medicine_name.Width = 300;
             // 
             // medicine_description
             // 
-            this.medicine_description.HeaderText = "Medicine Description";
+            this.medicine_description.HeaderText = "Generic Description";
             this.medicine_description.Name = "medicine_description";
             this.medicine_description.ReadOnly = true;
             this.medicine_description.Width = 250;
@@ -234,10 +234,10 @@
             // 
             // colDel
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle2;
             this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colDel.HeaderText = "Remove";
             this.colDel.Name = "colDel";

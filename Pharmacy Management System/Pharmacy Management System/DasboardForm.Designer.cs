@@ -190,7 +190,7 @@
             this.btnCustomerList.Name = "btnCustomerList";
             this.btnCustomerList.Size = new System.Drawing.Size(157, 35);
             this.btnCustomerList.TabIndex = 9;
-            this.btnCustomerList.Text = "Customer List";
+            this.btnCustomerList.Text = "Patient List";
             this.btnCustomerList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomerList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCustomerList.UseVisualStyleBackColor = true;
@@ -266,7 +266,7 @@
             this.btnMedCategory.Name = "btnMedCategory";
             this.btnMedCategory.Size = new System.Drawing.Size(157, 35);
             this.btnMedCategory.TabIndex = 4;
-            this.btnMedCategory.Text = "Medicine Category";
+            this.btnMedCategory.Text = "Brand Category";
             this.btnMedCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMedCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMedCategory.UseVisualStyleBackColor = true;

@@ -140,19 +140,20 @@
             // comboBoxMedicine
             // 
             this.comboBoxMedicine.FormattingEnabled = true;
-            this.comboBoxMedicine.Location = new System.Drawing.Point(82, 125);
+            this.comboBoxMedicine.Location = new System.Drawing.Point(118, 125);
             this.comboBoxMedicine.Name = "comboBoxMedicine";
-            this.comboBoxMedicine.Size = new System.Drawing.Size(287, 24);
+            this.comboBoxMedicine.Size = new System.Drawing.Size(251, 24);
             this.comboBoxMedicine.TabIndex = 35;
+            this.comboBoxMedicine.SelectedIndexChanged += new System.EventHandler(this.comboBoxMedicine_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 128);
+            this.label3.Location = new System.Drawing.Point(25, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 34;
-            this.label3.Text = "Medicine";
+            this.label3.Text = "Generic Name";
             // 
             // comboBoxSupplier
             // 
@@ -216,7 +217,7 @@
             // medicine_name
             // 
             this.medicine_name.DataPropertyName = "drug_name";
-            this.medicine_name.HeaderText = "Medicine Name";
+            this.medicine_name.HeaderText = "Generic Name";
             this.medicine_name.Name = "medicine_name";
             this.medicine_name.ReadOnly = true;
             this.medicine_name.Width = 300;
@@ -224,7 +225,7 @@
             // medicine_desc
             // 
             this.medicine_desc.DataPropertyName = "description";
-            this.medicine_desc.HeaderText = "Medicine Description";
+            this.medicine_desc.HeaderText = "Generic Description";
             this.medicine_desc.Name = "medicine_desc";
             this.medicine_desc.ReadOnly = true;
             this.medicine_desc.Width = 250;

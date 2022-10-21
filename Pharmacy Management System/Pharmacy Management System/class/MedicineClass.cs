@@ -68,10 +68,11 @@ namespace Pharmacy_Management_System
                 con.Open();
                 using (var cmd = new MySqlCommand())
                 {
-                    cmd.CommandText = "UPDATE `medicines` SET category_id=@category_id, type_id=@type_id, drug_name=@drug_name, measurement=@measurement, description=@description, prescription=@prescription WHERE id=@id";
+                    cmd.CommandText = "UPDATE `medicines` SET sku=@sku,category_id=@category_id, type_id=@type_id, drug_name=@drug_name, measurement=@measurement, description=@description, prescription=@prescription WHERE id=@id";
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = con;
                     cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+                    cmd.Parameters.AddWithValue("@sku", sku);
                     cmd.Parameters.AddWithValue("@category_id", category_id);
                     cmd.Parameters.AddWithValue("@type_id", type_id);
                     cmd.Parameters.AddWithValue("@drug_name", drug_name);
