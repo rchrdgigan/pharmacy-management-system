@@ -73,6 +73,10 @@ namespace Pharmacy_Management_System.ucontroll
 
         private void UCMedicine_Load(object sender, EventArgs e)
         {
+            comboBoxType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBoxType.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxCat.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBoxCat.AutoCompleteSource = AutoCompleteSource.ListItems;
             clearText();
             
             loadCategory();

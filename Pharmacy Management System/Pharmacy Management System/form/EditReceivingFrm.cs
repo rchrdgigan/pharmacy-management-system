@@ -73,6 +73,8 @@ namespace Pharmacy_Management_System.form
 
         private void EditReceivingFrm_Load(object sender, EventArgs e)
         {
+            comboBoxMedicine.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBoxMedicine.AutoCompleteSource = AutoCompleteSource.ListItems;
             DasboardForm.p_Navigation.Enabled = false;
             DasboardForm.p_Content.Enabled = false;
 
