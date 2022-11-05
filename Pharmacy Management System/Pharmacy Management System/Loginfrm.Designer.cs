@@ -40,11 +40,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.error_lbl = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -174,20 +174,9 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(597, 35);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(190, 20);
+            this.label12.Size = new System.Drawing.Size(202, 20);
             this.label12.TabIndex = 19;
-            this.label12.Text = "Provincial of Sorsogon";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(586, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(213, 20);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "PROVINCIAL HEALTH OFFICE";
+            this.label12.Text = "Pharmacy Management";
             // 
             // label8
             // 
@@ -232,14 +221,25 @@
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Calligraphy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(646, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "System of";
+            // 
             // Loginfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(888, 510);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -284,11 +284,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label error_lbl;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label3;
     }
 }
 

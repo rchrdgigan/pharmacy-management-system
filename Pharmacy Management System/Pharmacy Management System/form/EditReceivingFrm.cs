@@ -45,7 +45,7 @@ namespace Pharmacy_Management_System.form
             mc.list();
             foreach (DataRow item in mc.dtable.Rows)
             {
-                comboBoxMedicine.Items.Add(item[4].ToString() + "|" + item[1].ToString());
+                comboBoxMedicine.Items.Add(item[1].ToString() + "|" + item[4].ToString());
             }
         }
 

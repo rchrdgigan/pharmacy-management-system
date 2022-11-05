@@ -131,11 +131,11 @@ namespace Pharmacy_Management_System
                 message = "error" + ex.ToString();
             }
         }
-        public void selectMedicine(string medicine_name)
+        public void selectMedicine(string medicine_sku)
         {
             con.Open();
             string query = "";
-            query = "SELECT * FROM medicines WHERE drug_name='" + medicine_name + "'";
+            query = "SELECT * FROM medicines WHERE sku='" + medicine_sku + "'";
             MySqlCommand cmd = new MySqlCommand(query, con);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())

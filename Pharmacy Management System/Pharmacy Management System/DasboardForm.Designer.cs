@@ -55,15 +55,19 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button13 = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelNavigation.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelNavigation
             // 
             this.panelNavigation.BackColor = System.Drawing.Color.SteelBlue;
+            this.panelNavigation.Controls.Add(this.pictureBox1);
+            this.panelNavigation.Controls.Add(this.label5);
             this.panelNavigation.Controls.Add(this.panelMark);
             this.panelNavigation.Controls.Add(this.lbl_role);
             this.panelNavigation.Controls.Add(this.lbl_name);
@@ -90,7 +94,7 @@
             // panelMark
             // 
             this.panelMark.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panelMark.Location = new System.Drawing.Point(0, 160);
+            this.panelMark.Location = new System.Drawing.Point(0, 207);
             this.panelMark.Name = "panelMark";
             this.panelMark.Size = new System.Drawing.Size(10, 35);
             this.panelMark.TabIndex = 16;
@@ -100,7 +104,7 @@
             this.lbl_role.AutoSize = true;
             this.lbl_role.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_role.ForeColor = System.Drawing.Color.White;
-            this.lbl_role.Location = new System.Drawing.Point(5, 101);
+            this.lbl_role.Location = new System.Drawing.Point(5, 166);
             this.lbl_role.Name = "lbl_role";
             this.lbl_role.Size = new System.Drawing.Size(42, 16);
             this.lbl_role.TabIndex = 15;
@@ -111,7 +115,7 @@
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name.ForeColor = System.Drawing.Color.White;
-            this.lbl_name.Location = new System.Drawing.Point(2, 42);
+            this.lbl_name.Location = new System.Drawing.Point(2, 112);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(86, 16);
             this.lbl_name.TabIndex = 14;
@@ -122,7 +126,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 79);
+            this.label2.Location = new System.Drawing.Point(3, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 13;
@@ -133,7 +137,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 19);
+            this.label1.Location = new System.Drawing.Point(3, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 12;
@@ -147,7 +151,7 @@
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(12, 655);
+            this.button12.Location = new System.Drawing.Point(12, 664);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(157, 41);
@@ -166,7 +170,7 @@
             this.btnUserList.ForeColor = System.Drawing.Color.White;
             this.btnUserList.Image = ((System.Drawing.Image)(resources.GetObject("btnUserList.Image")));
             this.btnUserList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserList.Location = new System.Drawing.Point(12, 547);
+            this.btnUserList.Location = new System.Drawing.Point(12, 594);
             this.btnUserList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUserList.Name = "btnUserList";
             this.btnUserList.Size = new System.Drawing.Size(157, 35);
@@ -185,7 +189,7 @@
             this.btnCustomerList.ForeColor = System.Drawing.Color.White;
             this.btnCustomerList.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerList.Image")));
             this.btnCustomerList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomerList.Location = new System.Drawing.Point(12, 504);
+            this.btnCustomerList.Location = new System.Drawing.Point(12, 551);
             this.btnCustomerList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCustomerList.Name = "btnCustomerList";
             this.btnCustomerList.Size = new System.Drawing.Size(157, 35);
@@ -204,7 +208,7 @@
             this.btnSupplierList.ForeColor = System.Drawing.Color.White;
             this.btnSupplierList.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierList.Image")));
             this.btnSupplierList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSupplierList.Location = new System.Drawing.Point(12, 461);
+            this.btnSupplierList.Location = new System.Drawing.Point(12, 508);
             this.btnSupplierList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupplierList.Name = "btnSupplierList";
             this.btnSupplierList.Size = new System.Drawing.Size(157, 35);
@@ -223,7 +227,7 @@
             this.btnMedList.ForeColor = System.Drawing.Color.White;
             this.btnMedList.Image = ((System.Drawing.Image)(resources.GetObject("btnMedList.Image")));
             this.btnMedList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedList.Location = new System.Drawing.Point(12, 418);
+            this.btnMedList.Location = new System.Drawing.Point(12, 465);
             this.btnMedList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMedList.Name = "btnMedList";
             this.btnMedList.Size = new System.Drawing.Size(157, 35);
@@ -242,7 +246,7 @@
             this.btnMedType.ForeColor = System.Drawing.Color.White;
             this.btnMedType.Image = ((System.Drawing.Image)(resources.GetObject("btnMedType.Image")));
             this.btnMedType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedType.Location = new System.Drawing.Point(12, 375);
+            this.btnMedType.Location = new System.Drawing.Point(12, 422);
             this.btnMedType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMedType.Name = "btnMedType";
             this.btnMedType.Size = new System.Drawing.Size(157, 35);
@@ -261,7 +265,7 @@
             this.btnMedCategory.ForeColor = System.Drawing.Color.White;
             this.btnMedCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnMedCategory.Image")));
             this.btnMedCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedCategory.Location = new System.Drawing.Point(12, 332);
+            this.btnMedCategory.Location = new System.Drawing.Point(12, 379);
             this.btnMedCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMedCategory.Name = "btnMedCategory";
             this.btnMedCategory.Size = new System.Drawing.Size(157, 35);
@@ -280,7 +284,7 @@
             this.btnReceiving.ForeColor = System.Drawing.Color.White;
             this.btnReceiving.Image = ((System.Drawing.Image)(resources.GetObject("btnReceiving.Image")));
             this.btnReceiving.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReceiving.Location = new System.Drawing.Point(12, 289);
+            this.btnReceiving.Location = new System.Drawing.Point(12, 336);
             this.btnReceiving.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReceiving.Name = "btnReceiving";
             this.btnReceiving.Size = new System.Drawing.Size(157, 35);
@@ -299,7 +303,7 @@
             this.btnDispensing.ForeColor = System.Drawing.Color.White;
             this.btnDispensing.Image = ((System.Drawing.Image)(resources.GetObject("btnDispensing.Image")));
             this.btnDispensing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDispensing.Location = new System.Drawing.Point(12, 246);
+            this.btnDispensing.Location = new System.Drawing.Point(12, 293);
             this.btnDispensing.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDispensing.Name = "btnDispensing";
             this.btnDispensing.Size = new System.Drawing.Size(157, 35);
@@ -318,7 +322,7 @@
             this.btnInventory.ForeColor = System.Drawing.Color.White;
             this.btnInventory.Image = ((System.Drawing.Image)(resources.GetObject("btnInventory.Image")));
             this.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventory.Location = new System.Drawing.Point(12, 203);
+            this.btnInventory.Location = new System.Drawing.Point(12, 250);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(157, 35);
@@ -337,7 +341,7 @@
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(12, 160);
+            this.btnHome.Location = new System.Drawing.Point(12, 207);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(157, 35);
@@ -351,7 +355,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label8);
@@ -369,12 +372,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(829, 43);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(82, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(252, 21);
+            this.label5.Size = new System.Drawing.Size(75, 21);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Pharmacy Management Sytem";
+            this.label5.Text = "PMSBMH";
             // 
             // label12
             // 
@@ -454,6 +457,15 @@
             this.panelContent.Size = new System.Drawing.Size(1081, 655);
             this.panelContent.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 65);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // DasboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -475,6 +487,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -507,5 +520,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

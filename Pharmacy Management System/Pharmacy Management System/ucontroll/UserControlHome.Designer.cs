@@ -105,9 +105,9 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(3, 28);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(165, 18);
+            this.label14.Size = new System.Drawing.Size(144, 18);
             this.label14.TabIndex = 18;
-            this.label14.Text = "Total Customer Today";
+            this.label14.Text = "Total Patient Today";
             // 
             // groupBox1
             // 
