@@ -52,6 +52,7 @@
     <Compile Include="class\CategoryClass.cs" />
     <Compile Include="class\ConnectionClass.cs" />
     <Compile Include="class\CustomerClass.cs" />
+    <Compile Include="class\DispensingClass.cs" />
     <Compile Include="class\MedicineClass.cs" />
     <Compile Include="class\ReceivingClass.cs" />
     <Compile Include="class\SupplierClass.cs" />
@@ -62,6 +63,18 @@
     </Compile>
     <Compile Include="DasboardForm.Designer.cs">
       <DependentUpon>DasboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\DispensingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\DispensingFrm.Designer.cs">
+      <DependentUpon>DispensingFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EditDispensingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EditDispensingFrm.Designer.cs">
+      <DependentUpon>EditDispensingFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="form\EditReceivingFrm.cs">
       <SubType>Form</SubType>
@@ -145,6 +158,12 @@
     </Compile>
     <EmbeddedResource Include="DasboardForm.resx">
       <DependentUpon>DasboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\DispensingFrm.resx">
+      <DependentUpon>DispensingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EditDispensingFrm.resx">
+      <DependentUpon>EditDispensingFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\EditReceivingFrm.resx">
       <DependentUpon>EditReceivingFrm.cs</DependentUpon>

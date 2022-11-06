@@ -51,7 +51,7 @@ namespace Pharmacy_Management_System.form
             Random rnd = new Random();
             int number = rnd.Next(10000, 99999);
             string sum_ref_id = number + rc._maxid.ToString();
-            textBoxRefNo.Text = "BS"+sum_ref_id;
+            textBoxRefNo.Text = "BSIN"+sum_ref_id;
         }
 
         private void ReceivingFrm_Load(object sender, EventArgs e)
@@ -97,14 +97,28 @@ namespace Pharmacy_Management_System.form
 
         private void btnAddList_Click(object sender, EventArgs e)
         {
-            int i = dataGridView1.Rows.Add();
-            dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
-            dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
-            dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
-            dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
+            if (!string.IsNullOrEmpty(comboBoxMedicine.Text))
+            {
+                if (!string.IsNullOrEmpty(textBoxQty.Text))
+                {
+                    int i = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
+                    dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
+                    dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
+                    dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
 
-            comboBoxMedicine.Text = "";
-            textBoxQty.Clear();
+                    comboBoxMedicine.Text = "";
+                    textBoxQty.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Quantity is required! Please add quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Medicine is required! Please select medicine!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         public void createStockIn()

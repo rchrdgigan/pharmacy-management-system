@@ -35,9 +35,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,9 +68,12 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.patient_id,
             this.date,
-            this.StockIn,
-            this.StockOut,
+            this.refno,
+            this.patient_name,
+            this.address,
             this.colEdit,
             this.colDel});
             this.dataGridView1.Location = new System.Drawing.Point(22, 70);
@@ -75,6 +81,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1040, 555);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -97,29 +104,57 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 27);
             this.button1.TabIndex = 9;
-            this.button1.Text = "New";
+            this.button1.Text = "New Dispensing";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // patient_id
+            // 
+            this.patient_id.DataPropertyName = "patient_id";
+            this.patient_id.HeaderText = "";
+            this.patient_id.Name = "patient_id";
+            this.patient_id.ReadOnly = true;
+            this.patient_id.Visible = false;
             // 
             // date
             // 
+            this.date.DataPropertyName = "created_at";
             this.date.HeaderText = "Date";
             this.date.Name = "date";
             this.date.ReadOnly = true;
             this.date.Width = 150;
             // 
-            // StockIn
+            // refno
             // 
-            this.StockIn.HeaderText = "Reference #";
-            this.StockIn.Name = "StockIn";
-            this.StockIn.ReadOnly = true;
-            this.StockIn.Width = 350;
+            this.refno.DataPropertyName = "refno";
+            this.refno.HeaderText = "Reference #";
+            this.refno.Name = "refno";
+            this.refno.ReadOnly = true;
+            this.refno.Width = 200;
             // 
-            // StockOut
+            // patient_name
             // 
-            this.StockOut.HeaderText = "Customer";
-            this.StockOut.Name = "StockOut";
-            this.StockOut.ReadOnly = true;
-            this.StockOut.Width = 350;
+            this.patient_name.DataPropertyName = "name";
+            this.patient_name.HeaderText = "Patient";
+            this.patient_name.Name = "patient_name";
+            this.patient_name.ReadOnly = true;
+            this.patient_name.Width = 250;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Width = 250;
             // 
             // colEdit
             // 
@@ -162,6 +197,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UCDispensing";
             this.Size = new System.Drawing.Size(1081, 653);
+            this.Load += new System.EventHandler(this.UCDispensing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,9 +211,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn refno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
     }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditReceivingFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,24 +49,27 @@
             this.medicine_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 14);
+            this.label1.Location = new System.Drawing.Point(53, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 25);
+            this.label1.Size = new System.Drawing.Size(141, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Edit Receiving";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -77,7 +81,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(502, 84);
+            this.label5.Location = new System.Drawing.Point(479, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 16);
             this.label5.TabIndex = 41;
@@ -85,10 +89,10 @@
             // 
             // textBoxRefNo
             // 
-            this.textBoxRefNo.Location = new System.Drawing.Point(554, 81);
+            this.textBoxRefNo.Location = new System.Drawing.Point(531, 81);
             this.textBoxRefNo.Name = "textBoxRefNo";
             this.textBoxRefNo.ReadOnly = true;
-            this.textBoxRefNo.Size = new System.Drawing.Size(257, 21);
+            this.textBoxRefNo.Size = new System.Drawing.Size(280, 21);
             this.textBoxRefNo.TabIndex = 40;
             // 
             // btnCancel
@@ -100,7 +104,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(20, 508);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(154, 32);
+            this.btnCancel.Size = new System.Drawing.Size(154, 30);
             this.btnCancel.TabIndex = 39;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -113,9 +117,9 @@
             this.btnAddList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddList.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddList.ForeColor = System.Drawing.Color.White;
-            this.btnAddList.Location = new System.Drawing.Point(657, 119);
+            this.btnAddList.Location = new System.Drawing.Point(657, 117);
             this.btnAddList.Name = "btnAddList";
-            this.btnAddList.Size = new System.Drawing.Size(154, 32);
+            this.btnAddList.Size = new System.Drawing.Size(154, 30);
             this.btnAddList.TabIndex = 38;
             this.btnAddList.Text = "Add to List";
             this.btnAddList.UseVisualStyleBackColor = false;
@@ -124,7 +128,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(411, 128);
+            this.label4.Location = new System.Drawing.Point(469, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 37;
@@ -132,24 +136,24 @@
             // 
             // textBoxQty
             // 
-            this.textBoxQty.Location = new System.Drawing.Point(473, 125);
+            this.textBoxQty.Location = new System.Drawing.Point(531, 122);
             this.textBoxQty.Name = "textBoxQty";
-            this.textBoxQty.Size = new System.Drawing.Size(100, 21);
+            this.textBoxQty.Size = new System.Drawing.Size(120, 21);
             this.textBoxQty.TabIndex = 36;
             // 
             // comboBoxMedicine
             // 
             this.comboBoxMedicine.FormattingEnabled = true;
-            this.comboBoxMedicine.Location = new System.Drawing.Point(118, 125);
+            this.comboBoxMedicine.Location = new System.Drawing.Point(110, 122);
             this.comboBoxMedicine.Name = "comboBoxMedicine";
-            this.comboBoxMedicine.Size = new System.Drawing.Size(251, 24);
+            this.comboBoxMedicine.Size = new System.Drawing.Size(353, 24);
             this.comboBoxMedicine.TabIndex = 35;
             this.comboBoxMedicine.SelectedIndexChanged += new System.EventHandler(this.comboBoxMedicine_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 128);
+            this.label3.Location = new System.Drawing.Point(17, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 34;
@@ -159,19 +163,19 @@
             // 
             this.comboBoxSupplier.Enabled = false;
             this.comboBoxSupplier.FormattingEnabled = true;
-            this.comboBoxSupplier.Location = new System.Drawing.Point(82, 81);
+            this.comboBoxSupplier.Location = new System.Drawing.Point(110, 81);
             this.comboBoxSupplier.Name = "comboBoxSupplier";
-            this.comboBoxSupplier.Size = new System.Drawing.Size(287, 24);
+            this.comboBoxSupplier.Size = new System.Drawing.Size(353, 24);
             this.comboBoxSupplier.TabIndex = 33;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 84);
+            this.label2.Location = new System.Drawing.Point(17, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Supplier";
+            this.label2.Text = "Supplier Name";
             // 
             // btnUpdate
             // 
@@ -182,7 +186,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(657, 508);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(154, 32);
+            this.btnUpdate.Size = new System.Drawing.Size(154, 30);
             this.btnUpdate.TabIndex = 31;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -250,6 +254,15 @@
             this.colDel.Text = "Delete";
             this.colDel.UseColumnTextForButtonValue = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(18, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 33);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // EditReceivingFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -279,6 +292,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +319,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn medicine_desc;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -15,6 +15,8 @@ namespace Pharmacy_Management_System
         public static Panel p_Content;
         public static Panel p_Navigation;
         public static Button b_receiving;
+        public static Button b_dispensing;
+        public static Label lbl_pharmacist_name;
 
         public DasboardForm()
         {
@@ -31,6 +33,8 @@ namespace Pharmacy_Management_System
             p_Content = panelContent;
             p_Navigation = panelNavigation;
             b_receiving = btnReceiving;
+            b_dispensing = btnDispensing;
+            lbl_pharmacist_name = lbl_name;
 
             lbl_name.Text = Loginfrm._fname;
             lbl_role.Text = Loginfrm._role;

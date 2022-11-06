@@ -10,7 +10,7 @@ namespace Pharmacy_Management_System
 {
     class MedicineClass : ConnectionClass
     {
-        public MySqlDataReader msdtr;
+        //public MySqlDataReader msdtr;
         public DataTable dtable { get; set; }
         public string sku { get; set; }
         public Int32 category_id { get; set; }

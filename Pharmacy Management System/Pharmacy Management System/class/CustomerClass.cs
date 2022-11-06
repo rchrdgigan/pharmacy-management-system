@@ -10,7 +10,7 @@ namespace Pharmacy_Management_System
 {
     class CustomerClass : ConnectionClass
     {
-        public MySqlDataReader msdtr;
+        //public MySqlDataReader msdtr;
         public DataTable dtable { get; set; }
         public string name { get; set; }
         public string birthdate { get; set; }
@@ -100,14 +100,17 @@ namespace Pharmacy_Management_System
         {
             con.Open();
             string query = "";
-            query = "SELECT * FROM patients WHERE name='" + id + "'";
+            query = "SELECT * FROM patients WHERE id='" + id + "'";
             MySqlCommand cmd = new MySqlCommand(query, con);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                //_supplierid = dr["id"].ToString();
+                _customerid = dr["id"].ToString();
+                birthdate = dr["birthdate"].ToString();
+                address = dr["address"].ToString();
             }
             con.Close();
         }
+
     }
 }

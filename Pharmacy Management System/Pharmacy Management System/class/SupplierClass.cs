@@ -10,7 +10,7 @@ namespace Pharmacy_Management_System
 {
     class SupplierClass : ConnectionClass
     {
-        public MySqlDataReader msdtr;
+        //public MySqlDataReader msdtr;
         public DataTable dtable { get; set; }
         public string supplier_name { get; set; }
         public string supplier_contact { get; set; }
