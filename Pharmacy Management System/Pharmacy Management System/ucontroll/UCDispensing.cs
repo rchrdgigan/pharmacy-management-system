@@ -13,6 +13,7 @@ namespace Pharmacy_Management_System.ucontroll
     public partial class UCDispensing : UserControl
     {
         DispensingClass dc = new DispensingClass();
+        CustomerClass cc = new CustomerClass();
 
         public UCDispensing()
         {
@@ -47,7 +48,7 @@ namespace Pharmacy_Management_System.ucontroll
                 string data_id = row.Cells["id"].Value.ToString();
                 if (columnName == "colDel")
                 {
-                    DialogResult result = MessageBox.Show("Are you sure want to delete this data?\n\nWarring : This data will be deleted permanently and affect the stock-in data that connected in this transaction and you cannot undo or restore data!", "Deleting Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MessageBox.Show("Are you sure want to delete this data?\n\nWarring : This data will be deleted permanently and affect the stock-out data that connected in this transaction and you cannot undo or restore data!", "Deleting Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
                         dc.delete(int.Parse(data_id));
@@ -65,10 +66,17 @@ namespace Pharmacy_Management_System.ucontroll
                     {
                         DataGridViewRow rows = this.dataGridView1.Rows[e.RowIndex];
                         form.EditDispensingFrm ef = new form.EditDispensingFrm();
+
                         ef._trans_id = rows.Cells["id"].Value.ToString();
                         ef.patient_id = rows.Cells["patient_id"].Value.ToString();
-                        ef.patient_name = rows.Cells["patient_name"].Value.ToString();
+                        cc.selectPatient(rows.Cells["patient_id"].Value.ToString());
+                        ef.patient_name = cc.name;
+                        ef.address = cc.address;
+                        ef.birthdate = cc.birthdate;
                         ef.refno = rows.Cells["refno"].Value.ToString();
+                        ef.patient_stat = rows.Cells["patient_status"].Value.ToString();
+                        ef.ward_no = rows.Cells["ward_no"].Value.ToString();
+                        ef.bed_no = rows.Cells["bed_no"].Value.ToString();
                         ef.Show();
                     }
                 }

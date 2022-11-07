@@ -21,6 +21,7 @@ namespace Pharmacy_Management_System.form
         string _medicine_id;
         string _medicine_name;
         string _medicine_description;
+        bool input_patient_state;
 
         public DispensingFrm()
         {
@@ -80,15 +81,23 @@ namespace Pharmacy_Management_System.form
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (comboBoxPatientStatus.Text == "Inpatient")
+            if (!string.IsNullOrEmpty(comboBoxPatientStatus.Text))
             {
-                textBoxWardNum.Enabled = true;
-                textBoxBedNum.Enabled = true;
+                input_patient_state = true;
+                if (comboBoxPatientStatus.Text == "Inpatient")
+                {
+                    textBoxWardNum.Enabled = true;
+                    textBoxBedNum.Enabled = true;
+                }
+                else
+                {
+                    textBoxWardNum.Enabled = false;
+                    textBoxBedNum.Enabled = false;
+                }
             }
             else
             {
-                textBoxWardNum.Enabled = false;
-                textBoxBedNum.Enabled = false;
+                input_patient_state = false;
             }
         }
 
@@ -104,28 +113,36 @@ namespace Pharmacy_Management_System.form
 
         private void btnAddList_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(comboBoxMedicine.Text))
+            if (input_patient_state == true)
             {
-                if (!string.IsNullOrEmpty(textBoxQty.Text))
+                if (!string.IsNullOrEmpty(comboBoxMedicine.Text))
                 {
-                    int i = dataGridView1.Rows.Add();
-                    dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
-                    dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
-                    dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
-                    dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
+                    if (!string.IsNullOrEmpty(textBoxQty.Text))
+                    {
+                        int i = dataGridView1.Rows.Add();
+                        dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
+                        dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
+                        dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
+                        dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
 
-                    comboBoxMedicine.Text = "";
-                    textBoxQty.Clear();
+                        comboBoxMedicine.Text = "";
+                        textBoxQty.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quantity is required! Please add quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Quantity is required! Please add quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Medicine is required! Please select medicine!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Medicine is required! Please select medicine!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seletecting patient state is required! Please select patient state!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+           
            
         }
 
@@ -185,44 +202,52 @@ namespace Pharmacy_Management_System.form
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(_patient_id))
+            if (input_patient_state == true)
             {
-                MessageBox.Show("Patient is required! Please select patient.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                if (dataGridView1.Rows.Count < 1)
+                if (string.IsNullOrEmpty(_patient_id))
                 {
-                    MessageBox.Show("Medicine is required! Please select medicine data and add qty!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Patient is required! Please select patient.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    dc.customer_id = int.Parse(_patient_id);
-                    dc.refno = textBoxRefNo.Text;
-                    dc.age = int.Parse(textBoxAge.Text);
-                    dc.patient_state = comboBoxPatientStatus.Text;
-                    dc.war_number = (string.IsNullOrEmpty(textBoxWardNum.Text)) ? null : textBoxWardNum.Text;
-                    dc.bed_number = (string.IsNullOrEmpty(textBoxWardNum.Text)) ? null : textBoxBedNum.Text;
-                    dc.refno = textBoxRefNo.Text;
-                    dc.pharmacist_name = DasboardForm.lbl_pharmacist_name.Text;
-                    dc.createTransactionOut();
-
-                    if (string.IsNullOrEmpty(dc.lastId))
+                    if (dataGridView1.Rows.Count < 1)
                     {
-                        MessageBox.Show("Transaction not created!" + dc.message);
+                        MessageBox.Show("Medicine is required! Please select medicine, add qty and add to the list!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        createStockOut();
-                        MessageBox.Show("" + dc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dc.customer_id = int.Parse(_patient_id);
+                        dc.refno = textBoxRefNo.Text;
+                        dc.age = int.Parse(textBoxAge.Text);
+                        dc.patient_state = comboBoxPatientStatus.Text;
+                        dc.war_number = (string.IsNullOrEmpty(textBoxWardNum.Text)) ? null : textBoxWardNum.Text;
+                        dc.bed_number = (string.IsNullOrEmpty(textBoxWardNum.Text)) ? null : textBoxBedNum.Text;
+                        dc.refno = textBoxRefNo.Text;
+                        dc.pharmacist_name = DasboardForm.lbl_pharmacist_name.Text;
+                        dc.createTransactionOut();
 
-                        DasboardForm.p_Navigation.Enabled = true;
-                        DasboardForm.p_Content.Enabled = true;
-                        DasboardForm.b_dispensing.PerformClick();
-                        this.Close();
+                        if (string.IsNullOrEmpty(dc.lastId))
+                        {
+                            MessageBox.Show("Transaction not created!" + dc.message);
+                        }
+                        else
+                        {
+                            createStockOut();
+                            MessageBox.Show("" + dc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            DasboardForm.p_Navigation.Enabled = true;
+                            DasboardForm.p_Content.Enabled = true;
+                            DasboardForm.b_dispensing.PerformClick();
+                            this.Close();
+                        }
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Seletecting patient state is required! Please select patient state!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
     }
 }

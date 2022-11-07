@@ -60,7 +60,6 @@
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -158,7 +157,7 @@
             this.comboBoxMedicine.FormattingEnabled = true;
             this.comboBoxMedicine.Location = new System.Drawing.Point(110, 193);
             this.comboBoxMedicine.Name = "comboBoxMedicine";
-            this.comboBoxMedicine.Size = new System.Drawing.Size(330, 24);
+            this.comboBoxMedicine.Size = new System.Drawing.Size(362, 24);
             this.comboBoxMedicine.TabIndex = 35;
             this.comboBoxMedicine.SelectedIndexChanged += new System.EventHandler(this.comboBoxMedicine_SelectedIndexChanged);
             // 
@@ -176,7 +175,7 @@
             this.comboBoxPatient.FormattingEnabled = true;
             this.comboBoxPatient.Location = new System.Drawing.Point(110, 116);
             this.comboBoxPatient.Name = "comboBoxPatient";
-            this.comboBoxPatient.Size = new System.Drawing.Size(346, 24);
+            this.comboBoxPatient.Size = new System.Drawing.Size(362, 24);
             this.comboBoxPatient.TabIndex = 33;
             this.comboBoxPatient.SelectedIndexChanged += new System.EventHandler(this.comboBoxPatient_SelectedIndexChanged);
             // 
@@ -359,27 +358,12 @@
             this.textBoxAddress.Size = new System.Drawing.Size(526, 21);
             this.textBoxAddress.TabIndex = 52;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(446, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 24);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // DispensingFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(829, 628);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.label9);
@@ -451,6 +435,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
     }
 }

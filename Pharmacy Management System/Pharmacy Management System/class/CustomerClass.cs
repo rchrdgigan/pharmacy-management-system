@@ -106,6 +106,7 @@ namespace Pharmacy_Management_System
             while (dr.Read())
             {
                 _customerid = dr["id"].ToString();
+                name = dr["name"].ToString();
                 birthdate = dr["birthdate"].ToString();
                 address = dr["address"].ToString();
             }

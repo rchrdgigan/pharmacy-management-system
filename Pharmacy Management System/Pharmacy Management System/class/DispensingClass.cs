@@ -73,10 +73,46 @@ namespace Pharmacy_Management_System
             }
         }
 
+        public void updateTransactionOut(int id)
+        {
+            try
+            {
+                con.Close();
+                con.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.CommandText = "UPDATE `transaction_out` SET patient_state=@patient_state, war_number=@war_number, bed_number=@bed_number WHERE id=@id";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+                    cmd.Parameters.AddWithValue("@patient_state", patient_state);
+                    cmd.Parameters.AddWithValue("@war_number", war_number);
+                    cmd.Parameters.AddWithValue("@bed_number", bed_number);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                message = "error" + ex.ToString();
+            }
+        }
+
         public void list()
         {
             string query = "";
-            query = "SELECT transaction_out.id, transaction_out.patient_id, transaction_out.refno, transaction_out.created_at, patients.name, patients.address FROM transaction_out INNER JOIN patients ON transaction_out.patient_id = patients.id ORDER BY transaction_out.id DESC";
+            query = "SELECT transaction_out.id, transaction_out.patient_id, transaction_out.refno, transaction_out.patient_state, transaction_out.war_number, " + 
+                    "transaction_out.bed_number, transaction_out.created_at, patients.name, patients.address " + 
+                    "FROM transaction_out INNER JOIN patients ON transaction_out.patient_id = patients.id ORDER BY transaction_out.id DESC";
+            MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            msda.Fill(dt);
+            dtable = dt;
+        }
+
+        public void listMedicine(int id)
+        {
+            string query = "";
+            query = "SELECT out_stocks.id, out_stocks.transaction_out_id, out_stocks.medicine_id, out_stocks.qty, medicines.drug_name, medicines.description FROM out_stocks INNER JOIN medicines ON out_stocks.medicine_id = medicines.id WHERE out_stocks.transaction_out_id='" + id + "' ORDER BY out_stocks.id DESC";
             MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             msda.Fill(dt);
@@ -92,6 +128,27 @@ namespace Pharmacy_Management_System
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.CommandText = "DELETE FROM transaction_out WHERE id=@id";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                message = "error" + ex.ToString();
+            }
+        }
+
+        public void delStockOut(int id)
+        {
+            try
+            {
+                con.Close();
+                con.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.CommandText = "DELETE FROM out_stocks WHERE transaction_out_id=@id";
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = con;
                     cmd.Parameters.AddWithValue("@id", id);

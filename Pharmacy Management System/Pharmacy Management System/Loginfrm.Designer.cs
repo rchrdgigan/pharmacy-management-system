@@ -49,7 +49,7 @@
             // usernameTxtBox
             // 
             this.usernameTxtBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxtBox.Location = new System.Drawing.Point(35, 245);
+            this.usernameTxtBox.Location = new System.Drawing.Point(35, 247);
             this.usernameTxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.usernameTxtBox.Name = "usernameTxtBox";
             this.usernameTxtBox.Size = new System.Drawing.Size(232, 22);
@@ -58,7 +58,7 @@
             // passwordTxtBox
             // 
             this.passwordTxtBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxtBox.Location = new System.Drawing.Point(35, 300);
+            this.passwordTxtBox.Location = new System.Drawing.Point(35, 302);
             this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.passwordTxtBox.Name = "passwordTxtBox";
             this.passwordTxtBox.Size = new System.Drawing.Size(232, 22);
@@ -70,12 +70,12 @@
             this.btnSignIn.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSignIn.FlatAppearance.BorderSize = 0;
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignIn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(154, 345);
+            this.btnSignIn.Location = new System.Drawing.Point(165, 351);
             this.btnSignIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(113, 30);
+            this.btnSignIn.Size = new System.Drawing.Size(102, 30);
             this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "Login";
             this.btnSignIn.UseVisualStyleBackColor = false;
@@ -86,12 +86,12 @@
             this.button2.BackColor = System.Drawing.Color.Gray;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(35, 345);
+            this.button2.Location = new System.Drawing.Point(35, 351);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 30);
+            this.button2.Size = new System.Drawing.Size(102, 30);
             this.button2.TabIndex = 3;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = false;
@@ -100,22 +100,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(32, 224);
+            this.label1.Location = new System.Drawing.Point(32, 226);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 17);
+            this.label1.Size = new System.Drawing.Size(72, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(32, 279);
+            this.label2.Location = new System.Drawing.Point(32, 281);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
             // 

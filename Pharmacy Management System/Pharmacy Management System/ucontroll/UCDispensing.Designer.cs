@@ -37,6 +37,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patient_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ward_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bed_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.refno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +73,9 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.patient_id,
+            this.patient_status,
+            this.ward_no,
+            this.bed_no,
             this.date,
             this.refno,
             this.patient_name,
@@ -123,6 +129,30 @@
             this.patient_id.Name = "patient_id";
             this.patient_id.ReadOnly = true;
             this.patient_id.Visible = false;
+            // 
+            // patient_status
+            // 
+            this.patient_status.DataPropertyName = "patient_state";
+            this.patient_status.HeaderText = "";
+            this.patient_status.Name = "patient_status";
+            this.patient_status.ReadOnly = true;
+            this.patient_status.Visible = false;
+            // 
+            // ward_no
+            // 
+            this.ward_no.DataPropertyName = "war_number";
+            this.ward_no.HeaderText = "";
+            this.ward_no.Name = "ward_no";
+            this.ward_no.ReadOnly = true;
+            this.ward_no.Visible = false;
+            // 
+            // bed_no
+            // 
+            this.bed_no.DataPropertyName = "bed_number";
+            this.bed_no.HeaderText = "";
+            this.bed_no.Name = "bed_no";
+            this.bed_no.ReadOnly = true;
+            this.bed_no.Visible = false;
             // 
             // date
             // 
@@ -213,6 +243,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn patient_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ward_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bed_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn refno;
         private System.Windows.Forms.DataGridViewTextBoxColumn patient_name;
