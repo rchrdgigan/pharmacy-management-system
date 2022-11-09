@@ -152,7 +152,7 @@ namespace Pharmacy_Management_System.form
             {
                 cc.con.Close();
                 cc.con.Open();
-                string query = ("INSERT INTO `out_stocks`(`transaction_out_id`, `medicine_id`, `qty`, `created_at`) VALUES ('" + dc.lastId + "','" + dataGridView1.Rows[i].Cells[0].Value + "', '" + dataGridView1.Rows[i].Cells[3].Value + "', Now());");
+                string query = ("INSERT INTO `inventories`(`transaction_out_id`, `medicine_id`, `qty_out`, `created_at`) VALUES ('" + dc.lastId + "','" + dataGridView1.Rows[i].Cells[0].Value + "', '" + dataGridView1.Rows[i].Cells[3].Value + "', Now());");
                 MySqlCommand cmd = new MySqlCommand(query, cc.con);
                 cmd.ExecuteNonQuery();
             }
@@ -160,10 +160,10 @@ namespace Pharmacy_Management_System.form
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
-            string columnName = dataGridView1.Columns[columnIndex].Name;
             try
             {
+                int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                string columnName = dataGridView1.Columns[columnIndex].Name;
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 if (columnName == "colDel")
                 {
@@ -221,7 +221,7 @@ namespace Pharmacy_Management_System.form
                         dc.age = int.Parse(textBoxAge.Text);
                         dc.patient_state = comboBoxPatientStatus.Text;
                         dc.war_number = (string.IsNullOrEmpty(textBoxWardNum.Text)) ? null : textBoxWardNum.Text;
-                        dc.bed_number = (string.IsNullOrEmpty(textBoxWardNum.Text)) ? null : textBoxBedNum.Text;
+                        dc.bed_number = (string.IsNullOrEmpty(textBoxBedNum.Text)) ? null : textBoxBedNum.Text;
                         dc.refno = textBoxRefNo.Text;
                         dc.pharmacist_name = DasboardForm.lbl_pharmacist_name.Text;
                         dc.createTransactionOut();

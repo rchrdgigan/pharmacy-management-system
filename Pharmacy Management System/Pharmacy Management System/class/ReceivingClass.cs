@@ -96,7 +96,7 @@ namespace Pharmacy_Management_System
         public void listMedicine(int id)
         {
             string query = "";
-            query = "SELECT in_stocks.id, in_stocks.transaction_in_id, in_stocks.medicine_id, in_stocks.qty, medicines.drug_name, medicines.description FROM in_stocks INNER JOIN medicines ON in_stocks.medicine_id = medicines.id WHERE in_stocks.transaction_in_id='" + id + "' ORDER BY in_stocks.id DESC";
+            query = "SELECT inventories.id, inventories.transaction_in_id, inventories.medicine_id, inventories.qty_in, medicines.drug_name, medicines.description FROM inventories INNER JOIN medicines ON inventories.medicine_id = medicines.id WHERE inventories.transaction_in_id='" + id + "' ORDER BY inventories.id DESC";
             MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             msda.Fill(dt);
@@ -111,7 +111,7 @@ namespace Pharmacy_Management_System
                 con.Open();
                 using (var cmd = new MySqlCommand())
                 {
-                    cmd.CommandText = "DELETE FROM in_stocks WHERE transaction_in_id=@id";
+                    cmd.CommandText = "DELETE FROM inventories WHERE transaction_in_id=@id";
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = con;
                     cmd.Parameters.AddWithValue("@id", id);

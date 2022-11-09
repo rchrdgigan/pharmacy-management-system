@@ -52,7 +52,7 @@ namespace Pharmacy_Management_System.ucontroll
                     if (result == DialogResult.Yes)
                     {
                         dc.delete(int.Parse(data_id));
-                        MessageBox.Show("Data deleted successfully!", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Data deleted successfully!"+ dc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
                         {
                             if (oneCell.Selected)
@@ -85,6 +85,11 @@ namespace Pharmacy_Management_System.ucontroll
             {
 
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("name like '%" + textBox1.Text + "%'");
         }
     }
 }

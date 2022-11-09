@@ -127,7 +127,7 @@ namespace Pharmacy_Management_System.form
             {
                 cc.con.Close();
                 cc.con.Open();
-                string query = ("INSERT INTO `in_stocks`(`transaction_in_id`, `medicine_id`, `qty`, `created_at`) VALUES ('" + rc.lastId + "','" + dataGridView1.Rows[i].Cells[0].Value + "', '" + dataGridView1.Rows[i].Cells[3].Value + "', Now());");
+                string query = ("INSERT INTO `inventories`(`transaction_in_id`, `medicine_id`, `qty_in`, `created_at`) VALUES ('" + rc.lastId + "','" + dataGridView1.Rows[i].Cells[0].Value + "', '" + dataGridView1.Rows[i].Cells[3].Value + "', Now());");
                 MySqlCommand cmd = new MySqlCommand(query, cc.con);
                 cmd.ExecuteNonQuery();
             }

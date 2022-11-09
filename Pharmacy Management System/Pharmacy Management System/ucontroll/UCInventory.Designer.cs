@@ -32,7 +32,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drug_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.measurement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,8 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
+            this.drug_name,
+            this.measurement,
             this.StockIn,
             this.StockOut,
             this.StockAvailable});
@@ -64,6 +66,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1040, 555);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // label2
             // 
@@ -80,16 +83,27 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 21);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // name
+            // drug_name
             // 
-            this.name.HeaderText = "Drug Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 450;
+            this.drug_name.DataPropertyName = "drug_name";
+            this.drug_name.HeaderText = "Drug Name";
+            this.drug_name.Name = "drug_name";
+            this.drug_name.ReadOnly = true;
+            this.drug_name.Width = 300;
+            // 
+            // measurement
+            // 
+            this.measurement.DataPropertyName = "measurement";
+            this.measurement.HeaderText = "Measurement";
+            this.measurement.Name = "measurement";
+            this.measurement.ReadOnly = true;
+            this.measurement.Width = 150;
             // 
             // StockIn
             // 
+            this.StockIn.DataPropertyName = "in_stock";
             this.StockIn.HeaderText = "Stock In";
             this.StockIn.Name = "StockIn";
             this.StockIn.ReadOnly = true;
@@ -97,6 +111,7 @@
             // 
             // StockOut
             // 
+            this.StockOut.DataPropertyName = "out_stock";
             this.StockOut.HeaderText = "Stock Out";
             this.StockOut.Name = "StockOut";
             this.StockOut.ReadOnly = true;
@@ -104,6 +119,7 @@
             // 
             // StockAvailable
             // 
+            this.StockAvailable.DataPropertyName = "total_stocks";
             this.StockAvailable.HeaderText = "Stock Available";
             this.StockAvailable.Name = "StockAvailable";
             this.StockAvailable.ReadOnly = true;
@@ -121,6 +137,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UCInventory";
             this.Size = new System.Drawing.Size(1081, 653);
+            this.Load += new System.EventHandler(this.UCInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,7 +150,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drug_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn measurement;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockAvailable;

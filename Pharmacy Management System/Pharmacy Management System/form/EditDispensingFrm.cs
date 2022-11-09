@@ -15,6 +15,7 @@ namespace Pharmacy_Management_System.form
     {
         ConnectionClass cc = new ConnectionClass();
         DispensingClass dc = new DispensingClass();
+        InventoryClass ic = new InventoryClass();
         CustomerClass pc = new CustomerClass();
         MedicineClass mc = new MedicineClass();
         string _patient_id;
@@ -165,6 +166,18 @@ namespace Pharmacy_Management_System.form
 
         private void btnAddList_Click(object sender, EventArgs e)
         {
+            ic.listSpecific(int.Parse(_medicine_id));
+            foreach(DataRow item in ic.dtable.Rows)
+            {
+                if (ic.dtable.Rows.Count > 0)
+                {
+                    MessageBox.Show("HELLO WORLD" + item[5]);
+                }
+                else
+                {
+                    MessageBox.Show("This item is not set in recieved! Please set this item in recieving before dispensing!" + item[5]);
+                }
+            }
             if (input_patient_state == true)
             {
                 if (!string.IsNullOrEmpty(comboBoxMedicine.Text))
@@ -202,7 +215,7 @@ namespace Pharmacy_Management_System.form
             {
                 cc.con.Close();
                 cc.con.Open();
-                string query = ("INSERT INTO `out_stocks`(`transaction_out_id`, `medicine_id`, `qty`, `created_at`) VALUES ('" + _trans_id + "','" + dataGridView1.Rows[i].Cells[0].Value + "', '" + dataGridView1.Rows[i].Cells[3].Value + "', Now());");
+                string query = ("INSERT INTO `inventories`(`transaction_out_id`, `medicine_id`, `qty_out`, `created_at`) VALUES ('" + _trans_id + "','" + dataGridView1.Rows[i].Cells[0].Value + "', '" + dataGridView1.Rows[i].Cells[3].Value + "', Now());");
                 MySqlCommand cmd = new MySqlCommand(query, cc.con);
                 cmd.ExecuteNonQuery();
             }
@@ -220,7 +233,7 @@ namespace Pharmacy_Management_System.form
                 {
                     dc.patient_state = comboBoxPatientStatus.Text;
                     dc.war_number = (string.IsNullOrEmpty(textBoxWardNum.Text)) ? null : textBoxWardNum.Text;
-                    dc.bed_number = (string.IsNullOrEmpty(textBoxWardNum.Text)) ? null : textBoxBedNum.Text;
+                    dc.bed_number = (string.IsNullOrEmpty(textBoxBedNum.Text)) ? null : textBoxBedNum.Text;
                     dc.updateTransactionOut(int.Parse(_trans_id));
 
                     dc.delStockOut(int.Parse(_trans_id));
@@ -236,6 +249,28 @@ namespace Pharmacy_Management_System.form
             else
             {
                 MessageBox.Show("Seletecting patient state is required! Please select patient state!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                string columnName = dataGridView1.Columns[columnIndex].Name;
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                if (columnName == "colDel")
+                {
+                    foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
+                    {
+                        if (oneCell.Selected)
+                            dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
+                    }
+                }
+            }
+            catch
+            {
+
             }
         }
     }
