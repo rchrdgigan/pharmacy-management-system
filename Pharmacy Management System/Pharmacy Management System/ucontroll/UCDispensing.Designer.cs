@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -46,6 +46,7 @@
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.labelLoadStat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,10 +165,10 @@
             // 
             // colEdit
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle3;
             this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colEdit.HeaderText = "Action";
             this.colEdit.Name = "colEdit";
@@ -178,10 +179,10 @@
             // 
             // colDel
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle4;
             this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colDel.HeaderText = "";
             this.colDel.Name = "colDel";
@@ -215,10 +216,20 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // labelLoadStat
+            // 
+            this.labelLoadStat.AutoSize = true;
+            this.labelLoadStat.Location = new System.Drawing.Point(19, 628);
+            this.labelLoadStat.Name = "labelLoadStat";
+            this.labelLoadStat.Size = new System.Drawing.Size(73, 16);
+            this.labelLoadStat.TabIndex = 16;
+            this.labelLoadStat.Text = "Today Data";
+            // 
             // UCDispensing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelLoadStat);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -253,5 +264,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
+        private System.Windows.Forms.Label labelLoadStat;
     }
 }

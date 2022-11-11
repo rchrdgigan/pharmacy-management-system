@@ -12,8 +12,6 @@ namespace Pharmacy_Management_System
     class InventoryClass : ConnectionClass
     {
         public DataTable dtable { get; set; }
-        public int stock_in;
-        public int stock_out;
 
         public void list()
         {

@@ -51,6 +51,16 @@ namespace Pharmacy_Management_System
             dtable = dt;
         }
 
+        public void listToday()
+        {
+            string query = "";
+            query = "SELECT * FROM patients WHERE created_at LIKE '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%' ORDER BY created_at DESC";
+            MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            msda.Fill(dt);
+            dtable = dt;
+        }
+
         public void update(int id)
         {
             try
