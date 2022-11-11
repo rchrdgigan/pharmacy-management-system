@@ -160,5 +160,17 @@ namespace Pharmacy_Management_System
                 message = "error" + ex.ToString();
             }
         }
+        public void listToday()
+        {
+            string query = "";
+            query = "SELECT transaction_out.id, transaction_out.patient_id, transaction_out.refno, transaction_out.patient_state, transaction_out.war_number, " +
+                    "transaction_out.bed_number, transaction_out.created_at, patients.name, patients.address " +
+                    "FROM transaction_out INNER JOIN patients ON transaction_out.patient_id = patients.id WHERE transaction_out.created_at LIKE '%" + DateTime.Now.ToString("yyyy-MM-dd") +"%' ORDER BY transaction_out.id DESC";
+            MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            msda.Fill(dt);
+            dtable = dt;
+        }
+
     }
 }

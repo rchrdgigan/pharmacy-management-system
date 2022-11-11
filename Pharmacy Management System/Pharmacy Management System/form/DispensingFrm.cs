@@ -15,6 +15,7 @@ namespace Pharmacy_Management_System.form
     {
         ConnectionClass cc = new ConnectionClass();
         DispensingClass dc = new DispensingClass();
+        InventoryClass ic = new InventoryClass();
         CustomerClass pc = new CustomerClass();
         MedicineClass mc = new MedicineClass();
         string _patient_id;
@@ -113,37 +114,54 @@ namespace Pharmacy_Management_System.form
 
         private void btnAddList_Click(object sender, EventArgs e)
         {
-            if (input_patient_state == true)
+            if (!string.IsNullOrEmpty(comboBoxMedicine.Text))
             {
-                if (!string.IsNullOrEmpty(comboBoxMedicine.Text))
+                if (!string.IsNullOrEmpty(textBoxQty.Text))
                 {
-                    if (!string.IsNullOrEmpty(textBoxQty.Text))
-                    {
-                        int i = dataGridView1.Rows.Add();
-                        dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
-                        dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
-                        dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
-                        dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
+                    bool valid = false;
 
-                        comboBoxMedicine.Text = "";
-                        textBoxQty.Clear();
-                    }
-                    else
+                    ic.listSpecific(int.Parse(_medicine_id));
+                    foreach (DataRow item in ic.dtable.Rows)
                     {
-                        MessageBox.Show("Quantity is required! Please add quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        valid = true;
+                        if (input_patient_state == true)
+                        {
+                            if (int.Parse(item[5].ToString()) >= int.Parse(textBoxQty.Text))
+                            {
+                                int i = dataGridView1.Rows.Add();
+                                dataGridView1.Rows[i].Cells[0].Value = _medicine_id;
+                                dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
+                                dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
+                                dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
+
+                                comboBoxMedicine.Text = "";
+                                textBoxQty.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Quantity is higher than total stocks! Please add quantity less than or equal to " + item[5] + " quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Seletecting patient state is required! Please select patient state!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    if (valid == false)
+                    {
+                        MessageBox.Show("This item is has no stocks in! Please set this item in recieving before dispensing!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Medicine is required! Please select medicine!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Quantity is required! Please add quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Seletecting patient state is required! Please select patient state!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Medicine is required! Please select medicine!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-           
-           
+
         }
 
         public void createStockOut()

@@ -28,6 +28,13 @@ namespace Pharmacy_Management_System.ucontroll
             dataGridView1.DataSource = sc.dtable;
         }
 
+        private void loadDataToday()
+        {
+            sc.listToday();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = sc.dtable;
+        }
+
         public void clearText()
         {
             labelAge.Visible = false;
@@ -60,9 +67,19 @@ namespace Pharmacy_Management_System.ucontroll
 
         private void UCCustomer_Load(object sender, EventArgs e)
         {
-            
-            loadData();
-            clearText();
+            if(UserControlHome.is_patient_click == true)
+            {
+                labelLoadStat.Text = "Today Data List";
+                loadDataToday();
+                clearText();
+                UserControlHome.is_patient_click = false;
+            }
+            else
+            {
+                labelLoadStat.Text = "All Data List";
+                loadData();
+                clearText();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

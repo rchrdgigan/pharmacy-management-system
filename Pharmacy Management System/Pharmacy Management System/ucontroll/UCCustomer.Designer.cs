@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelAgeVal = new System.Windows.Forms.Label();
+            this.labelAge = new System.Windows.Forms.Label();
             this.dateTimePickerBirthdate = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
@@ -42,16 +44,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.labelAge = new System.Windows.Forms.Label();
-            this.labelAgeVal = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelLoadStat = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,26 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient Form";
+            // 
+            // labelAgeVal
+            // 
+            this.labelAgeVal.AutoSize = true;
+            this.labelAgeVal.Location = new System.Drawing.Point(102, 204);
+            this.labelAgeVal.Name = "labelAgeVal";
+            this.labelAgeVal.Size = new System.Drawing.Size(14, 16);
+            this.labelAgeVal.TabIndex = 34;
+            this.labelAgeVal.Text = "0";
+            this.labelAgeVal.Visible = false;
+            // 
+            // labelAge
+            // 
+            this.labelAge.AutoSize = true;
+            this.labelAge.Location = new System.Drawing.Point(61, 204);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(35, 16);
+            this.labelAge.TabIndex = 33;
+            this.labelAge.Text = "Age :";
+            this.labelAge.Visible = false;
             // 
             // dateTimePickerBirthdate
             // 
@@ -202,23 +223,6 @@
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(737, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 21);
-            this.textBox2.TabIndex = 40;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(685, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 16);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Search";
-            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -252,10 +256,10 @@
             // 
             // colEdit
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle1;
             this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colEdit.HeaderText = "Action";
             this.colEdit.Name = "colEdit";
@@ -266,10 +270,10 @@
             // 
             // colDel
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle2;
             this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colDel.HeaderText = "";
             this.colDel.Name = "colDel";
@@ -278,30 +282,37 @@
             this.colDel.UseColumnTextForButtonValue = true;
             this.colDel.Width = 70;
             // 
-            // labelAge
+            // textBox2
             // 
-            this.labelAge.AutoSize = true;
-            this.labelAge.Location = new System.Drawing.Point(61, 204);
-            this.labelAge.Name = "labelAge";
-            this.labelAge.Size = new System.Drawing.Size(35, 16);
-            this.labelAge.TabIndex = 33;
-            this.labelAge.Text = "Age :";
-            this.labelAge.Visible = false;
+            this.textBox2.Location = new System.Drawing.Point(737, 31);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(325, 21);
+            this.textBox2.TabIndex = 40;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // labelAgeVal
+            // label3
             // 
-            this.labelAgeVal.AutoSize = true;
-            this.labelAgeVal.Location = new System.Drawing.Point(102, 204);
-            this.labelAgeVal.Name = "labelAgeVal";
-            this.labelAgeVal.Size = new System.Drawing.Size(14, 16);
-            this.labelAgeVal.TabIndex = 34;
-            this.labelAgeVal.Text = "0";
-            this.labelAgeVal.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(685, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 16);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Search";
+            // 
+            // labelLoadStat
+            // 
+            this.labelLoadStat.AutoSize = true;
+            this.labelLoadStat.Location = new System.Drawing.Point(389, 628);
+            this.labelLoadStat.Name = "labelLoadStat";
+            this.labelLoadStat.Size = new System.Drawing.Size(73, 16);
+            this.labelLoadStat.TabIndex = 41;
+            this.labelLoadStat.Text = "Today Data";
             // 
             // UCCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelLoadStat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -343,5 +354,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
         private System.Windows.Forms.Label labelAgeVal;
         private System.Windows.Forms.Label labelAge;
+        private System.Windows.Forms.Label labelLoadStat;
     }
 }

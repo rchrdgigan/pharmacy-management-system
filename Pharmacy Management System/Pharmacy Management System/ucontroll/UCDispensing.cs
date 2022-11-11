@@ -27,6 +27,13 @@ namespace Pharmacy_Management_System.ucontroll
             dataGridView1.DataSource = dc.dtable;
         }
 
+        private void loadDataToday()
+        {
+            dc.listToday();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = dc.dtable;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             form.DispensingFrm df = new form.DispensingFrm();
@@ -35,7 +42,17 @@ namespace Pharmacy_Management_System.ucontroll
 
         private void UCDispensing_Load(object sender, EventArgs e)
         {
-            loadData();
+            if(UserControlHome.is_dispensing_click == true)
+            {
+                labelLoadStat.Text = "Today Data List" + DateTime.Now.ToString("yyyy-MM");
+                loadDataToday();
+                UserControlHome.is_dispensing_click = false;
+            }
+            else
+            {
+                labelLoadStat.Text = "All Data List";
+                loadData();
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

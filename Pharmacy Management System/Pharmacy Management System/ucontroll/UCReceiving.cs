@@ -25,6 +25,12 @@ namespace Pharmacy_Management_System.ucontroll
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = rc.dtable;
         }
+        private void loadDataToday()
+        {
+            rc.listToday();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = rc.dtable;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,7 +40,17 @@ namespace Pharmacy_Management_System.ucontroll
 
         private void UCReceiving_Load(object sender, EventArgs e)
         {
-            loadData();
+            if(UserControlHome.is_receiving_click == true)
+            {
+                labelLoadStat.Text = "Today Data List";
+                loadDataToday();
+                UserControlHome.is_receiving_click = false;
+            }
+            else
+            {
+                labelLoadStat.Text = "All Data List";
+                loadData();
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

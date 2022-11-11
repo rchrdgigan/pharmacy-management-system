@@ -70,7 +70,15 @@ namespace Pharmacy_Management_System
             msda.Fill(dt);
             dtable = dt;
         }
-
+        public void listToday()
+        {
+            string query = "";
+            query = "SELECT transaction_in.id, transaction_in.supplier_id, transaction_in.refno, transaction_in.created_at, suppliers.supplier_name FROM transaction_in INNER JOIN suppliers ON transaction_in.supplier_id = suppliers.id WHERE transaction_in.created_at LIKE '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%' ORDER BY transaction_in.id DESC";
+            MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            msda.Fill(dt);
+            dtable = dt;
+        }
 
         public void delete(int id)
         {
