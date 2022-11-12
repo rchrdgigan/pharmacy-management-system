@@ -34,28 +34,30 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.countPatientToday = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicines_prescribed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.countReceivingToday = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.countDispensingToday = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,9 +78,9 @@
             this.panel8.Controls.Add(this.linkLabel3);
             this.panel8.Controls.Add(this.pictureBox1);
             this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.label13);
+            this.panel8.Controls.Add(this.countPatientToday);
             this.panel8.Controls.Add(this.label14);
-            this.panel8.Location = new System.Drawing.Point(720, 35);
+            this.panel8.Location = new System.Drawing.Point(720, 27);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(326, 147);
             this.panel8.TabIndex = 26;
@@ -108,9 +110,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(206, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(217, 38);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 97);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
@@ -123,17 +125,17 @@
             this.panel9.Size = new System.Drawing.Size(200, 5);
             this.panel9.TabIndex = 18;
             // 
-            // label13
+            // countPatientToday
             // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(302, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 25);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "0";
+            this.countPatientToday.AutoSize = true;
+            this.countPatientToday.Dock = System.Windows.Forms.DockStyle.Right;
+            this.countPatientToday.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countPatientToday.ForeColor = System.Drawing.Color.White;
+            this.countPatientToday.Location = new System.Drawing.Point(302, 0);
+            this.countPatientToday.Name = "countPatientToday";
+            this.countPatientToday.Size = new System.Drawing.Size(24, 25);
+            this.countPatientToday.TabIndex = 20;
+            this.countPatientToday.Text = "0";
             // 
             // label14
             // 
@@ -148,10 +150,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 191);
+            this.groupBox1.Location = new System.Drawing.Point(23, 183);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1035, 427);
+            this.groupBox1.Size = new System.Drawing.Size(1035, 448);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recent Patient";
@@ -162,42 +166,16 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.date,
-            this.medicines_prescribed,
-            this.qty,
-            this.name_address});
+            this.name_address,
+            this.patient_status});
             this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1023, 401);
+            this.dataGridView1.Size = new System.Drawing.Size(647, 422);
             this.dataGridView1.TabIndex = 19;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // medicines_prescribed
-            // 
-            this.medicines_prescribed.HeaderText = "Medicines Prescribed";
-            this.medicines_prescribed.Name = "medicines_prescribed";
-            this.medicines_prescribed.ReadOnly = true;
-            this.medicines_prescribed.Width = 350;
-            // 
-            // qty
-            // 
-            this.qty.HeaderText = "Quantity";
-            this.qty.Name = "qty";
-            this.qty.ReadOnly = true;
-            this.qty.Width = 80;
-            // 
-            // name_address
-            // 
-            this.name_address.HeaderText = "Name and Address";
-            this.name_address.Name = "name_address";
-            this.name_address.ReadOnly = true;
-            this.name_address.Width = 450;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // panel4
             // 
@@ -206,9 +184,9 @@
             this.panel4.Controls.Add(this.linkLabel2);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.panel7);
-            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.countReceivingToday);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(380, 35);
+            this.panel4.Location = new System.Drawing.Point(380, 27);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(326, 147);
             this.panel4.TabIndex = 23;
@@ -238,9 +216,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(206, 47);
+            this.pictureBox3.Location = new System.Drawing.Point(217, 38);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(111, 97);
+            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
@@ -253,17 +231,17 @@
             this.panel7.Size = new System.Drawing.Size(200, 5);
             this.panel7.TabIndex = 18;
             // 
-            // label10
+            // countReceivingToday
             // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(302, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 25);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "0";
+            this.countReceivingToday.AutoSize = true;
+            this.countReceivingToday.Dock = System.Windows.Forms.DockStyle.Right;
+            this.countReceivingToday.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countReceivingToday.ForeColor = System.Drawing.Color.White;
+            this.countReceivingToday.Location = new System.Drawing.Point(302, 0);
+            this.countReceivingToday.Name = "countReceivingToday";
+            this.countReceivingToday.Size = new System.Drawing.Size(24, 25);
+            this.countReceivingToday.TabIndex = 20;
+            this.countReceivingToday.Text = "0";
             // 
             // label7
             // 
@@ -279,7 +257,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
-            this.panel6.Location = new System.Drawing.Point(39, 84);
+            this.panel6.Location = new System.Drawing.Point(39, 76);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 5);
             this.panel6.TabIndex = 24;
@@ -290,9 +268,9 @@
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.linkLabel1);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.countDispensingToday);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(39, 34);
+            this.panel3.Location = new System.Drawing.Point(39, 26);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(326, 147);
             this.panel3.TabIndex = 22;
@@ -322,24 +300,24 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(206, 47);
+            this.pictureBox2.Location = new System.Drawing.Point(217, 38);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(111, 97);
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
             // 
-            // label9
+            // countDispensingToday
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(302, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 25);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "0";
+            this.countDispensingToday.AutoSize = true;
+            this.countDispensingToday.Dock = System.Windows.Forms.DockStyle.Right;
+            this.countDispensingToday.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countDispensingToday.ForeColor = System.Drawing.Color.White;
+            this.countDispensingToday.Location = new System.Drawing.Point(302, 0);
+            this.countDispensingToday.Name = "countDispensingToday";
+            this.countDispensingToday.Size = new System.Drawing.Size(24, 25);
+            this.countDispensingToday.TabIndex = 18;
+            this.countDispensingToday.Text = "0";
             // 
             // label6
             // 
@@ -351,6 +329,50 @@
             this.label6.Size = new System.Drawing.Size(174, 18);
             this.label6.TabIndex = 16;
             this.label6.Text = "Total Dispensing Today";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(659, 48);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(370, 394);
+            this.richTextBox1.TabIndex = 20;
+            this.richTextBox1.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(661, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Medicine Prescribe";
+            // 
+            // id
+            // 
+            this.id.HeaderText = "";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // name_address
+            // 
+            this.name_address.HeaderText = "Name and Address";
+            this.name_address.Name = "name_address";
+            this.name_address.ReadOnly = true;
+            this.name_address.Width = 350;
+            // 
+            // patient_status
+            // 
+            this.patient_status.HeaderText = "Patient State";
+            this.patient_status.Name = "patient_status";
+            this.patient_status.ReadOnly = true;
+            this.patient_status.Width = 150;
             // 
             // UserControlHome
             // 
@@ -365,11 +387,13 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserControlHome";
             this.Size = new System.Drawing.Size(1081, 653);
+            this.Load += new System.EventHandler(this.UserControlHome_Load);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -388,19 +412,19 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label countPatientToday;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label countReceivingToday;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label countDispensingToday;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.LinkLabel linkLabel3;
@@ -408,9 +432,11 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicines_prescribed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_status;
     }
 }

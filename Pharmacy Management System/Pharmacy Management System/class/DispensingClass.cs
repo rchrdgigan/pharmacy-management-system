@@ -25,6 +25,7 @@ namespace Pharmacy_Management_System
         public string lastId { get; set; }
         public string message { get; set; }
         public Int32 _maxid { get; set; }
+        public Int32 count { get; set; }
 
         public void maxId()
         {
@@ -170,6 +171,27 @@ namespace Pharmacy_Management_System
             DataTable dt = new DataTable();
             msda.Fill(dt);
             dtable = dt;
+        }
+
+        public void countDispensing()
+        {
+            try
+            {
+                con.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.CommandText = "SELECT COUNT(*) FROM transaction_out WHERE created_at LIKE '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%'";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    count = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                message = "error" + ex.ToString();
+            }
         }
 
     }

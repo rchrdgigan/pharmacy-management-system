@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelLoadStat = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patient_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patient_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,11 +46,9 @@
             this.refno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patient_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_state = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.labelLoadStat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +84,7 @@
             this.refno,
             this.patient_name,
             this.address,
+            this.patient_state,
             this.colEdit,
             this.colDel});
             this.dataGridView1.Location = new System.Drawing.Point(22, 70);
@@ -90,6 +93,40 @@
             this.dataGridView1.Size = new System.Drawing.Size(1040, 555);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(240, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Dispensing Management";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(953, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 27);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "New Dispensing";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // labelLoadStat
+            // 
+            this.labelLoadStat.AutoSize = true;
+            this.labelLoadStat.Location = new System.Drawing.Point(19, 628);
+            this.labelLoadStat.Name = "labelLoadStat";
+            this.labelLoadStat.Size = new System.Drawing.Size(73, 16);
+            this.labelLoadStat.TabIndex = 16;
+            this.labelLoadStat.Text = "Today Data";
             // 
             // id
             // 
@@ -134,10 +171,13 @@
             // date
             // 
             this.date.DataPropertyName = "created_at";
+            dataGridViewCellStyle1.Format = "D";
+            dataGridViewCellStyle1.NullValue = null;
+            this.date.DefaultCellStyle = dataGridViewCellStyle1;
             this.date.HeaderText = "Date";
             this.date.Name = "date";
             this.date.ReadOnly = true;
-            this.date.Width = 150;
+            this.date.Width = 180;
             // 
             // refno
             // 
@@ -145,7 +185,7 @@
             this.refno.HeaderText = "Reference #";
             this.refno.Name = "refno";
             this.refno.ReadOnly = true;
-            this.refno.Width = 200;
+            this.refno.Width = 150;
             // 
             // patient_name
             // 
@@ -153,7 +193,7 @@
             this.patient_name.HeaderText = "Patient";
             this.patient_name.Name = "patient_name";
             this.patient_name.ReadOnly = true;
-            this.patient_name.Width = 250;
+            this.patient_name.Width = 200;
             // 
             // address
             // 
@@ -161,14 +201,22 @@
             this.address.HeaderText = "Address";
             this.address.Name = "address";
             this.address.ReadOnly = true;
-            this.address.Width = 250;
+            this.address.Width = 200;
+            // 
+            // patient_state
+            // 
+            this.patient_state.DataPropertyName = "patient_state";
+            this.patient_state.HeaderText = "Patient State";
+            this.patient_state.Name = "patient_state";
+            this.patient_state.ReadOnly = true;
+            this.patient_state.Width = 120;
             // 
             // colEdit
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle2;
             this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colEdit.HeaderText = "Action";
             this.colEdit.Name = "colEdit";
@@ -179,10 +227,10 @@
             // 
             // colDel
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle3;
             this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colDel.HeaderText = "";
             this.colDel.Name = "colDel";
@@ -190,40 +238,6 @@
             this.colDel.Text = "Delete";
             this.colDel.UseColumnTextForButtonValue = true;
             this.colDel.Width = 70;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 23);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Dispensing Management";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(953, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 27);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "New Dispensing";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // labelLoadStat
-            // 
-            this.labelLoadStat.AutoSize = true;
-            this.labelLoadStat.Location = new System.Drawing.Point(19, 628);
-            this.labelLoadStat.Name = "labelLoadStat";
-            this.labelLoadStat.Size = new System.Drawing.Size(73, 16);
-            this.labelLoadStat.TabIndex = 16;
-            this.labelLoadStat.Text = "Today Data";
             // 
             // UCDispensing
             // 
@@ -253,6 +267,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelLoadStat;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn patient_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn patient_status;
@@ -262,8 +277,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn refno;
         private System.Windows.Forms.DataGridViewTextBoxColumn patient_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient_state;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
-        private System.Windows.Forms.Label labelLoadStat;
     }
 }

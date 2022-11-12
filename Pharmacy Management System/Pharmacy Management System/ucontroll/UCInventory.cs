@@ -31,7 +31,10 @@ namespace Pharmacy_Management_System.ucontroll
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 var value = dataGridView1.Rows[i].Cells[4].Value.ToString();
-                if (int.Parse(value) < 20)
+                if (int.Parse(value) == 0)
+                {
+                    dataGridView1.Rows[i].Cells["StockAvailable"].Style = new DataGridViewCellStyle { ForeColor = Color.White, BackColor = Color.Gray };
+                }else if (int.Parse(value) < 20)
                 {
                     dataGridView1.Rows[i].Cells["StockAvailable"].Style = new DataGridViewCellStyle { ForeColor = Color.White, BackColor = Color.Red };
                 }

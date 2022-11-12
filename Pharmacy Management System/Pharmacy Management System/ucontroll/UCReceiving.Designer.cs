@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelLoadStat = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplier_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,9 +42,6 @@
             this.supplier_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.labelLoadStat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,74 +64,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1040, 555);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // supplier_id
-            // 
-            this.supplier_id.DataPropertyName = "supplier_id";
-            this.supplier_id.HeaderText = "";
-            this.supplier_id.Name = "supplier_id";
-            this.supplier_id.ReadOnly = true;
-            this.supplier_id.Visible = false;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "created_at";
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Width = 150;
-            // 
-            // refno
-            // 
-            this.refno.DataPropertyName = "refno";
-            this.refno.HeaderText = "Reference #";
-            this.refno.Name = "refno";
-            this.refno.ReadOnly = true;
-            this.refno.Width = 350;
-            // 
-            // supplier_name
-            // 
-            this.supplier_name.DataPropertyName = "supplier_name";
-            this.supplier_name.HeaderText = "Supplier";
-            this.supplier_name.Name = "supplier_name";
-            this.supplier_name.ReadOnly = true;
-            this.supplier_name.Width = 350;
-            // 
-            // colEdit
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colEdit.HeaderText = "Action";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Text = "Edit";
-            this.colEdit.UseColumnTextForButtonValue = true;
-            this.colEdit.Width = 70;
-            // 
-            // colDel
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colDel.HeaderText = "";
-            this.colDel.Name = "colDel";
-            this.colDel.ReadOnly = true;
-            this.colDel.Text = "Delete";
-            this.colDel.UseColumnTextForButtonValue = true;
-            this.colDel.Width = 70;
             // 
             // label1
             // 
@@ -166,6 +99,77 @@
             this.labelLoadStat.TabIndex = 15;
             this.labelLoadStat.Text = "Today Data";
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // supplier_id
+            // 
+            this.supplier_id.DataPropertyName = "supplier_id";
+            this.supplier_id.HeaderText = "";
+            this.supplier_id.Name = "supplier_id";
+            this.supplier_id.ReadOnly = true;
+            this.supplier_id.Visible = false;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "created_at";
+            dataGridViewCellStyle1.Format = "D";
+            dataGridViewCellStyle1.NullValue = null;
+            this.date.DefaultCellStyle = dataGridViewCellStyle1;
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 200;
+            // 
+            // refno
+            // 
+            this.refno.DataPropertyName = "refno";
+            this.refno.HeaderText = "Reference #";
+            this.refno.Name = "refno";
+            this.refno.ReadOnly = true;
+            this.refno.Width = 300;
+            // 
+            // supplier_name
+            // 
+            this.supplier_name.DataPropertyName = "supplier_name";
+            this.supplier_name.HeaderText = "Supplier";
+            this.supplier_name.Name = "supplier_name";
+            this.supplier_name.ReadOnly = true;
+            this.supplier_name.Width = 350;
+            // 
+            // colEdit
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colEdit.HeaderText = "Action";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            this.colEdit.Width = 70;
+            // 
+            // colDel
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDel.HeaderText = "";
+            this.colDel.Name = "colDel";
+            this.colDel.ReadOnly = true;
+            this.colDel.Text = "Delete";
+            this.colDel.UseColumnTextForButtonValue = true;
+            this.colDel.Width = 70;
+            // 
             // UCReceiving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -190,6 +194,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelLoadStat;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplier_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
@@ -197,6 +202,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn supplier_name;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
-        private System.Windows.Forms.Label labelLoadStat;
     }
 }

@@ -59,7 +59,7 @@ namespace Pharmacy_Management_System.ucontroll
                 sc.birthdate = convert_dt;
                 sc.address = textBoxAddress.Text;
                 sc.create();
-                MessageBox.Show("" + sc.message, "Status"+ sc.birthdate, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("" + sc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearText();
                 loadData();
             }
