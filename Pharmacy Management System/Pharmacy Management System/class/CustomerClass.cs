@@ -123,5 +123,26 @@ namespace Pharmacy_Management_System
             con.Close();
         }
 
+        public void countPatient()
+        {
+            try
+            {
+                con.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.CommandText = "SELECT COUNT(*) FROM patients WHERE created_at LIKE '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%'";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    count = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                message = "error" + ex.ToString();
+            }
+        }
+
     }
 }

@@ -44,7 +44,7 @@ namespace Pharmacy_Management_System.ucontroll
         {
             if(UserControlHome.is_dispensing_click == true)
             {
-                labelLoadStat.Text = "Today Data List" + DateTime.Now.ToString("yyyy-MM");
+                labelLoadStat.Text = "Today Data List";
                 loadDataToday();
                 UserControlHome.is_dispensing_click = false;
             }
@@ -57,10 +57,10 @@ namespace Pharmacy_Management_System.ucontroll
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
-            string columnName = dataGridView1.Columns[columnIndex].Name;
             try
             {
+                int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                string columnName = dataGridView1.Columns[columnIndex].Name;
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 string data_id = row.Cells["id"].Value.ToString();
                 if (columnName == "colDel")
