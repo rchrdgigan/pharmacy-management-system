@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sku = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cat_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drug_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.measurement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prescription = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -51,16 +61,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sku = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cat_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drug_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.measurement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prescription = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.count_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +88,94 @@
             this.dataGridView1.Size = new System.Drawing.Size(670, 555);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.Visible = false;
+            // 
+            // sku
+            // 
+            this.sku.DataPropertyName = "sku";
+            this.sku.HeaderText = "SKU";
+            this.sku.Name = "sku";
+            this.sku.ReadOnly = true;
+            // 
+            // cat_name
+            // 
+            this.cat_name.DataPropertyName = "cat_name";
+            this.cat_name.HeaderText = "Brand Name";
+            this.cat_name.Name = "cat_name";
+            this.cat_name.ReadOnly = true;
+            // 
+            // drug_name
+            // 
+            this.drug_name.DataPropertyName = "drug_name";
+            this.drug_name.HeaderText = "Generic Name";
+            this.drug_name.Name = "drug_name";
+            this.drug_name.ReadOnly = true;
+            this.drug_name.Width = 200;
+            // 
+            // measurement
+            // 
+            this.measurement.DataPropertyName = "measurement";
+            this.measurement.HeaderText = "Dosage";
+            this.measurement.Name = "measurement";
+            this.measurement.ReadOnly = true;
+            // 
+            // type_name
+            // 
+            this.type_name.DataPropertyName = "type_name";
+            this.type_name.HeaderText = "Type";
+            this.type_name.Name = "type_name";
+            this.type_name.ReadOnly = true;
+            // 
+            // prescription
+            // 
+            this.prescription.DataPropertyName = "prescription";
+            this.prescription.HeaderText = "Prescription";
+            this.prescription.Name = "prescription";
+            this.prescription.ReadOnly = true;
+            this.prescription.Visible = false;
+            // 
+            // colEdit
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colEdit.HeaderText = "Action";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            this.colEdit.Width = 70;
+            // 
+            // colDel
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDel.HeaderText = "";
+            this.colDel.Name = "colDel";
+            this.colDel.ReadOnly = true;
+            this.colDel.Text = "Delete";
+            this.colDel.UseColumnTextForButtonValue = true;
+            this.colDel.Width = 70;
             // 
             // label1
             // 
@@ -303,98 +392,20 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "Search generic name";
             // 
-            // id
+            // count_lbl
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.Visible = false;
-            // 
-            // sku
-            // 
-            this.sku.DataPropertyName = "sku";
-            this.sku.HeaderText = "SKU";
-            this.sku.Name = "sku";
-            this.sku.ReadOnly = true;
-            // 
-            // cat_name
-            // 
-            this.cat_name.DataPropertyName = "cat_name";
-            this.cat_name.HeaderText = "Brand Name";
-            this.cat_name.Name = "cat_name";
-            this.cat_name.ReadOnly = true;
-            // 
-            // drug_name
-            // 
-            this.drug_name.DataPropertyName = "drug_name";
-            this.drug_name.HeaderText = "Generic Name";
-            this.drug_name.Name = "drug_name";
-            this.drug_name.ReadOnly = true;
-            this.drug_name.Width = 200;
-            // 
-            // measurement
-            // 
-            this.measurement.DataPropertyName = "measurement";
-            this.measurement.HeaderText = "Dosage";
-            this.measurement.Name = "measurement";
-            this.measurement.ReadOnly = true;
-            // 
-            // type_name
-            // 
-            this.type_name.DataPropertyName = "type_name";
-            this.type_name.HeaderText = "Type";
-            this.type_name.Name = "type_name";
-            this.type_name.ReadOnly = true;
-            // 
-            // prescription
-            // 
-            this.prescription.DataPropertyName = "prescription";
-            this.prescription.HeaderText = "Prescription";
-            this.prescription.Name = "prescription";
-            this.prescription.ReadOnly = true;
-            this.prescription.Visible = false;
-            // 
-            // colEdit
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle11;
-            this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colEdit.HeaderText = "Action";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Text = "Edit";
-            this.colEdit.UseColumnTextForButtonValue = true;
-            this.colEdit.Width = 70;
-            // 
-            // colDel
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle12;
-            this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colDel.HeaderText = "";
-            this.colDel.Name = "colDel";
-            this.colDel.ReadOnly = true;
-            this.colDel.Text = "Delete";
-            this.colDel.UseColumnTextForButtonValue = true;
-            this.colDel.Width = 70;
+            this.count_lbl.AutoSize = true;
+            this.count_lbl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.count_lbl.Location = new System.Drawing.Point(1081, 0);
+            this.count_lbl.Name = "count_lbl";
+            this.count_lbl.Size = new System.Drawing.Size(0, 16);
+            this.count_lbl.TabIndex = 31;
             // 
             // UCMedicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.count_lbl);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -446,5 +457,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn prescription;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
+        private System.Windows.Forms.Label count_lbl;
     }
 }

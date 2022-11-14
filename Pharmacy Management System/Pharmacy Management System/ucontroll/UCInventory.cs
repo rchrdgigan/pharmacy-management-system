@@ -24,6 +24,8 @@ namespace Pharmacy_Management_System.ucontroll
             ic.list();
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ic.dtable;
+
+            count_lbl.Text = dataGridView1.RowCount.ToString();
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

@@ -16,6 +16,7 @@ namespace Pharmacy_Management_System.ucontroll
         TypeClass tc = new TypeClass();
         CategoryClass cat = new CategoryClass();
         MedicineClass mc = new MedicineClass();
+        InventoryClass ic = new InventoryClass();
         string cat_id;
         string type_id;
         string _id;
@@ -81,6 +82,7 @@ namespace Pharmacy_Management_System.ucontroll
             
             loadCategory();
             loadType();
+            count_lbl.Text = dataGridView1.RowCount.ToString();
         }
 
         private void comboBoxCat_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,6 +116,7 @@ namespace Pharmacy_Management_System.ucontroll
                     mc.prescription = false;
                 }
                 mc.create();
+                ic.create(int.Parse(mc.modifId));
                 MessageBox.Show("" + mc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clearText();
                 loadData();

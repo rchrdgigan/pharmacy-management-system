@@ -213,7 +213,7 @@ namespace Pharmacy_Management_System.form
             }
             else
             {
-                textBoxAge.Clear();
+                textBoxAge.Text = "0";
             }
             textBoxAddress.Text = pc.address;
         }

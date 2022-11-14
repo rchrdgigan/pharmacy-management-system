@@ -21,7 +21,7 @@ namespace Pharmacy_Management_System
         public bool prescription { get; set; }
         public string _medicineid { get; set; }
         public string _id { get; set; }
-        public long modifId { get; set; }
+        public string modifId { get; set; }
         public string message { get; set; }
         public Int32 _maxid { get; set; }
 
@@ -41,7 +41,7 @@ namespace Pharmacy_Management_System
                 cmd.Parameters.AddWithValue("@description", description);
                 cmd.Parameters.Add("@prescription", MySqlDbType.Bit).Value = prescription;
                 cmd.ExecuteNonQuery();
-                modifId = cmd.LastInsertedId;
+                modifId = cmd.LastInsertedId.ToString();
                 message = "Medicine Successfully Added!";
 
             }
@@ -145,6 +145,16 @@ namespace Pharmacy_Management_System
                 description = dr["description"].ToString();
             }
             con.Close();
+        }
+
+        public void listMedPrescribe(int id)
+        {
+            string query = "";
+            query = "SELECT inventories.id, inventories.transaction_out_id, inventories.medicine_id, inventories.qty_out, medicines.drug_name, medicines.description FROM inventories INNER JOIN medicines ON inventories.medicine_id = medicines.id WHERE inventories.transaction_out_id='" + id +"'";
+            MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            msda.Fill(dt);
+            dtable = dt;
         }
 
     }
