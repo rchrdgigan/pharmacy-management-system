@@ -183,5 +183,10 @@ namespace Pharmacy_Management_System.ucontroll
         {
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("name like '%" + textBox2.Text + "%'");
         }
+
+        private void fnameTxtBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || char.IsWhiteSpace(e.KeyChar));
+        }
     }
 }

@@ -37,7 +37,13 @@
             this.countPatientToday = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -52,12 +58,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.countDispensingToday = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patient_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -144,9 +144,9 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(3, 28);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(144, 18);
+            this.label14.Size = new System.Drawing.Size(95, 18);
             this.label14.TabIndex = 18;
-            this.label14.Text = "Total Patient Today";
+            this.label14.Text = "Total Patient";
             // 
             // groupBox1
             // 
@@ -159,6 +159,24 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recent Patient";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(714, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Medicine Prescribe";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(717, 48);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(312, 394);
+            this.richTextBox1.TabIndex = 20;
+            this.richTextBox1.Text = "";
             // 
             // dataGridView1
             // 
@@ -173,9 +191,36 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(647, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(702, 422);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // name_address
+            // 
+            this.name_address.HeaderText = "Name and Address";
+            this.name_address.Name = "name_address";
+            this.name_address.ReadOnly = true;
+            this.name_address.Width = 400;
+            // 
+            // patient_status
+            // 
+            this.patient_status.HeaderText = "Patient State";
+            this.patient_status.Name = "patient_status";
+            this.patient_status.ReadOnly = true;
+            this.patient_status.Width = 150;
             // 
             // panel4
             // 
@@ -329,50 +374,6 @@
             this.label6.Size = new System.Drawing.Size(174, 18);
             this.label6.TabIndex = 16;
             this.label6.Text = "Total Dispensing Today";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(659, 48);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(370, 394);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(661, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Medicine Prescribe";
-            // 
-            // id
-            // 
-            this.id.HeaderText = "";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // name_address
-            // 
-            this.name_address.HeaderText = "Name and Address";
-            this.name_address.Name = "name_address";
-            this.name_address.ReadOnly = true;
-            this.name_address.Width = 350;
-            // 
-            // patient_status
-            // 
-            this.patient_status.HeaderText = "Patient State";
-            this.patient_status.Name = "patient_status";
-            this.patient_status.ReadOnly = true;
-            this.patient_status.Width = 150;
             // 
             // UserControlHome
             // 

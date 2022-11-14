@@ -32,5 +32,14 @@ namespace Pharmacy_Management_System
             msda.Fill(dt);
             dtable = dt;
         }
+
+        public void create(int medid)
+        {
+            con.Close();
+            con.Open();
+            string query = ("INSERT INTO `inventories`(`medicine_id`,`created_at`) VALUES ('" + medid + "', Now());");
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

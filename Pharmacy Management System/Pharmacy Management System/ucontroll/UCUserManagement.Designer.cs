@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.addressTxtBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -43,6 +50,7 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.registerBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.confirmationTxtBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,14 +58,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.unameTxtBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,72 @@
             this.dataGridView1.TabIndex = 42;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 200;
+            // 
+            // contact
+            // 
+            this.contact.DataPropertyName = "contact";
+            this.contact.HeaderText = "Contact";
+            this.contact.Name = "contact";
+            this.contact.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Width = 200;
+            // 
+            // uname
+            // 
+            this.uname.DataPropertyName = "username";
+            this.uname.HeaderText = "Username";
+            this.uname.Name = "uname";
+            this.uname.ReadOnly = true;
+            // 
+            // colEdit
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colEdit.HeaderText = "Action";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            this.colEdit.Width = 70;
+            // 
+            // colDel
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDel.HeaderText = "";
+            this.colDel.Name = "colDel";
+            this.colDel.ReadOnly = true;
+            this.colDel.Text = "Delete";
+            this.colDel.UseColumnTextForButtonValue = true;
+            this.colDel.Width = 70;
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(737, 31);
@@ -121,6 +187,7 @@
             // 
             this.cpnumTxtBox.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cpnumTxtBox.Location = new System.Drawing.Point(99, 86);
+            this.cpnumTxtBox.MaxLength = 11;
             this.cpnumTxtBox.Name = "cpnumTxtBox";
             this.cpnumTxtBox.Size = new System.Drawing.Size(244, 21);
             this.cpnumTxtBox.TabIndex = 26;
@@ -152,6 +219,7 @@
             this.fnameTxtBox.Name = "fnameTxtBox";
             this.fnameTxtBox.Size = new System.Drawing.Size(244, 21);
             this.fnameTxtBox.TabIndex = 20;
+            this.fnameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fnameTxtBox_KeyPress);
             // 
             // label2
             // 
@@ -217,6 +285,21 @@
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Form";
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.Green;
+            this.updateBtn.FlatAppearance.BorderSize = 0;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.ForeColor = System.Drawing.Color.White;
+            this.updateBtn.Location = new System.Drawing.Point(218, 370);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(104, 27);
+            this.updateBtn.TabIndex = 36;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // checkBox1
             // 
@@ -284,87 +367,6 @@
             this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 29;
             this.label4.Text = "Username";
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.Color.Green;
-            this.updateBtn.FlatAppearance.BorderSize = 0;
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.ForeColor = System.Drawing.Color.White;
-            this.updateBtn.Location = new System.Drawing.Point(218, 370);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(104, 27);
-            this.updateBtn.TabIndex = 36;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = false;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 200;
-            // 
-            // contact
-            // 
-            this.contact.DataPropertyName = "contact";
-            this.contact.HeaderText = "Contact";
-            this.contact.Name = "contact";
-            this.contact.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Address";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            this.address.Width = 200;
-            // 
-            // uname
-            // 
-            this.uname.DataPropertyName = "username";
-            this.uname.HeaderText = "Username";
-            this.uname.Name = "uname";
-            this.uname.ReadOnly = true;
-            // 
-            // colEdit
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colEdit.HeaderText = "Action";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Text = "Edit";
-            this.colEdit.UseColumnTextForButtonValue = true;
-            this.colEdit.Width = 70;
-            // 
-            // colDel
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colDel.HeaderText = "";
-            this.colDel.Name = "colDel";
-            this.colDel.ReadOnly = true;
-            this.colDel.Text = "Delete";
-            this.colDel.UseColumnTextForButtonValue = true;
-            this.colDel.Width = 70;
             // 
             // UCUserManagement
             // 
