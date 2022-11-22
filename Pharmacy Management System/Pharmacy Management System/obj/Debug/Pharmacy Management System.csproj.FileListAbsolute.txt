@@ -62,3 +62,23 @@ C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Man
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.EditReceivingFrm.resources
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.DispensingFrm.resources
 C:\Users\admin\Desktop\Client Batch 2022\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.EditDispensingFrm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.DispensingFrm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.EditDispensingFrm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.EditReceivingFrm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.ReceivingFrm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.PrintInpatientFrm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\Pharmacy_Management_System.form.PrintOutpatientFrm.resources
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\RdlCompile.cache
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\obj\Debug\RdlCompile.compiled
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Acer\Desktop\pharmacy-management-system\Pharmacy Management System\Pharmacy Management System\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll

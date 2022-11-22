@@ -113,7 +113,8 @@ namespace Pharmacy_Management_System
         public void listMedicine(int id)
         {
             string query = "";
-            query = "SELECT inventories.id, inventories.transaction_out_id, inventories.medicine_id, inventories.qty_out, medicines.drug_name, medicines.description FROM inventories INNER JOIN medicines ON inventories.medicine_id = medicines.id WHERE inventories.transaction_out_id='" + id + "' ORDER BY inventories.id DESC";
+            query = "SELECT inventories.id, inventories.transaction_out_id, inventories.medicine_id, inventories.qty_out, medicines.drug_name, medicines.description, medicines.measurement, categories.cat_name " +
+                "FROM inventories INNER JOIN medicines ON inventories.medicine_id = medicines.id INNER JOIN categories ON medicines.category_id = categories.id WHERE inventories.transaction_out_id='" + id + "' ORDER BY inventories.id DESC";
             MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             msda.Fill(dt);

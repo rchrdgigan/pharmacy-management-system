@@ -131,5 +131,19 @@ namespace Pharmacy_Management_System
             }
             return check;
         }
+
+        public void selectCat(int cat_id)
+        {
+            con.Open();
+            string query = "";
+            query = "SELECT * FROM categories WHERE id='" + cat_id + "'";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cat_name = dr["cat_name"].ToString();
+            }
+            con.Close();
+        }
     }
 }

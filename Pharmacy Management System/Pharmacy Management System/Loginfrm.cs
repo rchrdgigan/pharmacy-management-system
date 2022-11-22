@@ -63,15 +63,12 @@ namespace Pharmacy_Management_System
                     if (verify == true)
                     {
                         error_lbl.Visible = false;
-                        MessageBox.Show("Successfully Login!", "Succeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _role = uc.role;
                         _username = uc.username;
                         _fname = uc.fname;
                         _log_id = uc._id;
-                        this.Hide();
-
-                        DasboardForm dsboard = new DasboardForm();
-                        dsboard.ShowDialog();
+                        progressBar1.Visible = true;
+                        timer1.Enabled = true;
                     }
                     else
                     {
@@ -102,6 +99,18 @@ namespace Pharmacy_Management_System
         {
             this.passwordTxtBox.KeyPress += new
            System.Windows.Forms.KeyPressEventHandler(CheckEnter);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Value = progressBar1.Value + 3;
+            if(progressBar1.Value > 98)
+            {
+                timer1.Enabled = false;
+                DasboardForm dsboard = new DasboardForm();
+                dsboard.ShowDialog();
+                this.Hide();
+            }
         }
     }
 }

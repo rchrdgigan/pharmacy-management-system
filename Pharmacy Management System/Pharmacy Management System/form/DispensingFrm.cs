@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Microsoft.Reporting.WinForms;
 
 namespace Pharmacy_Management_System.form
 {
@@ -17,11 +18,15 @@ namespace Pharmacy_Management_System.form
         DispensingClass dc = new DispensingClass();
         InventoryClass ic = new InventoryClass();
         CustomerClass pc = new CustomerClass();
+        CategoryClass ctc = new CategoryClass();
         MedicineClass mc = new MedicineClass();
         string _patient_id;
         string _medicine_id;
         string _medicine_name;
         string _medicine_description;
+        string _medicine_brand;
+        string _medicine_dosage;
+
         bool input_patient_state;
 
         public DispensingFrm()
@@ -110,6 +115,9 @@ namespace Pharmacy_Management_System.form
             _medicine_id = mc._medicineid;
             _medicine_name = mc.drug_name;
             _medicine_description = mc.description;
+            ctc.selectCat(mc.category_id);
+            _medicine_brand = ctc.cat_name;
+            _medicine_dosage = mc.measurement;
         }
 
         private void btnAddList_Click(object sender, EventArgs e)
@@ -133,7 +141,8 @@ namespace Pharmacy_Management_System.form
                                 dataGridView1.Rows[i].Cells[1].Value = _medicine_name;
                                 dataGridView1.Rows[i].Cells[2].Value = _medicine_description;
                                 dataGridView1.Rows[i].Cells[3].Value = textBoxQty.Text;
-
+                                dataGridView1.Rows[i].Cells[5].Value = _medicine_brand;
+                                dataGridView1.Rows[i].Cells[6].Value = _medicine_dosage;
                                 comboBoxMedicine.Text = "";
                                 textBoxQty.Clear();
                             }
@@ -218,6 +227,9 @@ namespace Pharmacy_Management_System.form
             textBoxAddress.Text = pc.address;
         }
 
+        ReportDataSource rs = new ReportDataSource();
+        ReportParameterCollection rp = new ReportParameterCollection();
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (input_patient_state == true)
@@ -251,12 +263,95 @@ namespace Pharmacy_Management_System.form
                         else
                         {
                             createStockOut();
-                            MessageBox.Show("" + dc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
+                            if (comboBoxPatientStatus.Text == "Outpatient")
+                            {
+                                string valueStr = comboBoxPatient.Text;
+                                var vals = valueStr.Split('|')[0];
+                                string _issuing_date = DateTime.Now.ToString("MMMM dd, yyyy");
+                                string _pharmacist = DasboardForm.lbl_pharmacist_name.Text;
+                                string _patient_name = vals;
+                                string _patient_age = textBoxAge.Text;
+                                string _patient_state = comboBoxPatientStatus.Text;
 
-                            DasboardForm.p_Navigation.Enabled = true;
-                            DasboardForm.p_Content.Enabled = true;
-                            DasboardForm.b_dispensing.PerformClick();
+                                List<PatientMedicineClass> pm_lst = new List<PatientMedicineClass>();
+                                pm_lst.Clear();
+                                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                                {
+                                    PatientMedicineClass pmc = new PatientMedicineClass
+                                    {
+                                        gen_name = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                                        brand_name = dataGridView1.Rows[i].Cells[5].Value.ToString(),
+                                        dosage = dataGridView1.Rows[i].Cells[6].Value.ToString(),
+                                        qty = dataGridView1.Rows[i].Cells[3].Value.ToString(),
+                                    };
+                                    pm_lst.Add(pmc);
+                                }
+                                rs.Name = "DataSet1";
+                                rs.Value = pm_lst;
+                                PrintOutpatientFrm pof = new PrintOutpatientFrm();
+                                DateTime issuingValue = DateTime.Parse(_issuing_date);
+                                string issuing_date = issuingValue.ToString("MMMM dd, yyyy");
+                                pof.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\print\PrintDispensingOutpatient.rdlc";
+                                rp.Add(new ReportParameter("issuing_date", issuing_date));
+                                rp.Add(new ReportParameter("pharmacist", _pharmacist));
+                                rp.Add(new ReportParameter("patient_name", _patient_name));
+                                rp.Add(new ReportParameter("patient_age", _patient_age));
+                                rp.Add(new ReportParameter("patient_state", _patient_state));
+                                pof.reportViewer1.LocalReport.SetParameters(rp);
+                                pof.reportViewer1.ProcessingMode = ProcessingMode.Local;
+                                pof.reportViewer1.LocalReport.DataSources.Clear();
+                                pof.reportViewer1.LocalReport.DataSources.Add(rs);
+                                pof.reportViewer1.RefreshReport();
+                                pof.Show();
+                            }
+                            else
+                            {
+                                string valueStr = comboBoxPatient.Text;
+                                var vals = valueStr.Split('|')[0];
+                                string _issuing_date = DateTime.Now.ToString("MMMM dd, yyyy");
+                                string _pharmacist = DasboardForm.lbl_pharmacist_name.Text;
+                                string _patient_name = vals;
+                                string _patient_age = textBoxAge.Text;
+                                string _patient_state = comboBoxPatientStatus.Text;
+                                string _ward_no = textBoxWardNum.Text;
+                                string _bed_no = textBoxBedNum.Text;
+                                List<PatientMedicineClass> pm_lst = new List<PatientMedicineClass>();
+                                pm_lst.Clear();
+                                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                                {
+                                    PatientMedicineClass pmc = new PatientMedicineClass
+                                    {
+                                        gen_name = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                                        brand_name = dataGridView1.Rows[i].Cells[5].Value.ToString(),
+                                        dosage = dataGridView1.Rows[i].Cells[6].Value.ToString(),
+                                        qty = dataGridView1.Rows[i].Cells[3].Value.ToString(),
+                                    };
+                                    pm_lst.Add(pmc);
+                                }
+                                rs.Name = "DataSet1";
+                                rs.Value = pm_lst;
+                                PrintInpatientFrm pif = new PrintInpatientFrm();
+                                DateTime issuingValue = DateTime.Parse(_issuing_date);
+                                string issuing_date = issuingValue.ToString("MMMM dd, yyyy");
+                                pif.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\print\PrintDispensingInpatient.rdlc";
+                                rp.Add(new ReportParameter("issuing_date", issuing_date));
+                                rp.Add(new ReportParameter("pharmacist", _pharmacist));
+                                rp.Add(new ReportParameter("patient_name", _patient_name));
+                                rp.Add(new ReportParameter("patient_age", _patient_age));
+                                rp.Add(new ReportParameter("patient_state", _patient_state));
+                                rp.Add(new ReportParameter("ward_number", _ward_no));
+                                rp.Add(new ReportParameter("bed_number", _bed_no));
+                                pif.reportViewer1.LocalReport.SetParameters(rp);
+                                pif.reportViewer1.ProcessingMode = ProcessingMode.Local;
+                                pif.reportViewer1.LocalReport.DataSources.Clear();
+                                pif.reportViewer1.LocalReport.DataSources.Add(rs);
+                                pif.reportViewer1.RefreshReport();
+                                pif.Show();
+                            }
                             this.Close();
+
+                            MessageBox.Show("" + dc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }

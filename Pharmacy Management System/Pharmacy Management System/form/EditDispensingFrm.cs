@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Microsoft.Reporting.WinForms;
 
 namespace Pharmacy_Management_System.form
 {
@@ -74,10 +75,12 @@ namespace Pharmacy_Management_System.form
             foreach (DataRow item in dc.dtable.Rows)
             {
                 int n = dataGridView1.Rows.Add();
-                dataGridView1.Rows[n].Cells[0].Value = item[2];
-                dataGridView1.Rows[n].Cells[1].Value = item[4];
-                dataGridView1.Rows[n].Cells[2].Value = item[5];
-                dataGridView1.Rows[n].Cells[3].Value = item[3];
+                dataGridView1.Rows[n].Cells[0].Value = item[2]; //id
+                dataGridView1.Rows[n].Cells[1].Value = item[4]; //generic
+                dataGridView1.Rows[n].Cells[2].Value = item[5]; //description
+                dataGridView1.Rows[n].Cells[3].Value = item[3]; //quantity
+                dataGridView1.Rows[n].Cells[5].Value = item[7]; //brand
+                dataGridView1.Rows[n].Cells[6].Value = item[6]; //dosage
             }
         }
 
@@ -278,6 +281,99 @@ namespace Pharmacy_Management_System.form
             {
 
             }
+        }
+
+        ReportDataSource rs = new ReportDataSource();
+        ReportParameterCollection rp = new ReportParameterCollection();
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (comboBoxPatientStatus.Text == "Outpatient")
+            {
+                string valueStr = comboBoxPatient.Text;
+                var vals = valueStr.Split('|')[0];
+                string _issuing_date = DateTime.Now.ToString("MMMM dd, yyyy");
+                string _pharmacist = DasboardForm.lbl_pharmacist_name.Text;
+                string _patient_name = vals;
+                string _patient_age = textBoxAge.Text;
+                string _patient_state = comboBoxPatientStatus.Text;
+               
+                List<PatientMedicineClass> pm_lst = new List<PatientMedicineClass>();
+                pm_lst.Clear();
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    PatientMedicineClass pmc = new PatientMedicineClass
+                    {
+                        gen_name = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                        brand_name = dataGridView1.Rows[i].Cells[5].Value.ToString(),
+                        dosage = dataGridView1.Rows[i].Cells[6].Value.ToString(),
+                        qty = dataGridView1.Rows[i].Cells[3].Value.ToString(),
+                    };
+                    pm_lst.Add(pmc);
+                }
+                rs.Name = "DataSet1";
+                rs.Value = pm_lst;
+                PrintOutpatientFrm pof = new PrintOutpatientFrm();
+                DateTime issuingValue = DateTime.Parse(_issuing_date);
+                string issuing_date = issuingValue.ToString("MMMM dd, yyyy");
+                pof.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\print\PrintDispensingOutpatient.rdlc";
+                rp.Add(new ReportParameter("issuing_date", issuing_date));
+                rp.Add(new ReportParameter("pharmacist", _pharmacist));
+                rp.Add(new ReportParameter("patient_name", _patient_name));
+                rp.Add(new ReportParameter("patient_age", _patient_age));
+                rp.Add(new ReportParameter("patient_state", _patient_state));
+                pof.reportViewer1.LocalReport.SetParameters(rp);
+                pof.reportViewer1.ProcessingMode = ProcessingMode.Local;
+                pof.reportViewer1.LocalReport.DataSources.Clear();
+                pof.reportViewer1.LocalReport.DataSources.Add(rs);
+                pof.reportViewer1.RefreshReport();
+                pof.Show();
+            }
+            else
+            {
+                string valueStr = comboBoxPatient.Text;
+                var vals = valueStr.Split('|')[0];
+                string _issuing_date = DateTime.Now.ToString("MMMM dd, yyyy");
+                string _pharmacist = DasboardForm.lbl_pharmacist_name.Text;
+                string _patient_name = vals;
+                string _patient_age = textBoxAge.Text;
+                string _patient_state = comboBoxPatientStatus.Text;
+                string _ward_no = textBoxWardNum.Text;
+                string _bed_no = textBoxBedNum.Text;
+                List<PatientMedicineClass> pm_lst = new List<PatientMedicineClass>();
+                pm_lst.Clear();
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    PatientMedicineClass pmc = new PatientMedicineClass
+                    {
+                        gen_name = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                        brand_name = dataGridView1.Rows[i].Cells[5].Value.ToString(),
+                        dosage = dataGridView1.Rows[i].Cells[6].Value.ToString(),
+                        qty = dataGridView1.Rows[i].Cells[3].Value.ToString(),
+                    };
+                    pm_lst.Add(pmc);
+                }
+                rs.Name = "DataSet1";
+                rs.Value = pm_lst;
+                PrintInpatientFrm pif = new PrintInpatientFrm();
+                DateTime issuingValue = DateTime.Parse(_issuing_date);
+                string issuing_date = issuingValue.ToString("MMMM dd, yyyy");
+                pif.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\print\PrintDispensingInpatient.rdlc";
+                rp.Add(new ReportParameter("issuing_date", issuing_date));
+                rp.Add(new ReportParameter("pharmacist", _pharmacist));
+                rp.Add(new ReportParameter("patient_name", _patient_name));
+                rp.Add(new ReportParameter("patient_age", _patient_age));
+                rp.Add(new ReportParameter("patient_state", _patient_state));
+                rp.Add(new ReportParameter("ward_number", _ward_no));
+                rp.Add(new ReportParameter("bed_number", _bed_no));
+                pif.reportViewer1.LocalReport.SetParameters(rp);
+                pif.reportViewer1.ProcessingMode = ProcessingMode.Local;
+                pif.reportViewer1.LocalReport.DataSources.Clear();
+                pif.reportViewer1.LocalReport.DataSources.Add(rs);
+                pif.reportViewer1.RefreshReport();
+                pif.Show();
+            }
+            this.Close();
         }
     }
 }
