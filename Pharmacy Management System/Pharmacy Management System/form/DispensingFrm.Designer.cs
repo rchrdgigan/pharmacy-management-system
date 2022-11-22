@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DispensingFrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,6 +49,8 @@
             this.medicine_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Measurement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxPatientStatus = new System.Windows.Forms.ComboBox();
             this.textBoxRefNo = new System.Windows.Forms.TextBox();
@@ -113,7 +115,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(20, 580);
+            this.btnCancel.Location = new System.Drawing.Point(20, 575);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(154, 30);
             this.btnCancel.TabIndex = 39;
@@ -195,7 +197,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(657, 580);
+            this.btnSave.Location = new System.Drawing.Point(657, 575);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(154, 30);
             this.btnSave.TabIndex = 31;
@@ -213,7 +215,9 @@
             this.medicine_name,
             this.medicine_description,
             this.qty,
-            this.colDel});
+            this.colDel,
+            this.Category,
+            this.Measurement});
             this.dataGridView1.Location = new System.Drawing.Point(20, 229);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -250,16 +254,30 @@
             // 
             // colDel
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle6;
             this.colDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colDel.HeaderText = "Remove";
             this.colDel.Name = "colDel";
             this.colDel.ReadOnly = true;
             this.colDel.Text = "Delete";
             this.colDel.UseColumnTextForButtonValue = true;
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "BrandName";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            this.Category.Visible = false;
+            // 
+            // Measurement
+            // 
+            this.Measurement.HeaderText = "Dosage";
+            this.Measurement.Name = "Measurement";
+            this.Measurement.ReadOnly = true;
+            this.Measurement.Visible = false;
             // 
             // label6
             // 
@@ -418,11 +436,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewButtonColumn colDel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxPatientStatus;
         private System.Windows.Forms.TextBox textBoxRefNo;
@@ -435,5 +448,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewButtonColumn colDel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Measurement;
     }
 }

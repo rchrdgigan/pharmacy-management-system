@@ -143,6 +143,8 @@ namespace Pharmacy_Management_System
                 _medicineid = dr["id"].ToString();
                 drug_name = dr["drug_name"].ToString();
                 description = dr["description"].ToString();
+                category_id = int.Parse(dr["category_id"].ToString());
+                measurement = dr["measurement"].ToString();
             }
             con.Close();
         }

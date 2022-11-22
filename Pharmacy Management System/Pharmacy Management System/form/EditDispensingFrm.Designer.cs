@@ -54,13 +54,15 @@
             this.comboBoxPatient = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.medicine_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicine_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Measurement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -301,6 +303,21 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(620, 580);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(31, 30);
+            this.button2.TabIndex = 78;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -311,13 +328,14 @@
             this.medicine_name,
             this.medicine_description,
             this.qty,
-            this.colDel});
+            this.colDel,
+            this.Category,
+            this.Measurement});
             this.dataGridView1.Location = new System.Drawing.Point(20, 229);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(791, 333);
-            this.dataGridView1.TabIndex = 55;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.TabIndex = 79;
             // 
             // medicine_id
             // 
@@ -359,19 +377,19 @@
             this.colDel.Text = "Delete";
             this.colDel.UseColumnTextForButtonValue = true;
             // 
-            // button2
+            // Category
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(620, 580);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(31, 30);
-            this.button2.TabIndex = 78;
-            this.button2.UseVisualStyleBackColor = false;
+            this.Category.HeaderText = "BrandName";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            this.Category.Visible = false;
+            // 
+            // Measurement
+            // 
+            this.Measurement.HeaderText = "Dosage";
+            this.Measurement.Name = "Measurement";
+            this.Measurement.ReadOnly = true;
+            this.Measurement.Visible = false;
             // 
             // EditDispensingFrm
             // 
@@ -379,6 +397,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(829, 631);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxAddress);
@@ -401,7 +420,6 @@
             this.Controls.Add(this.comboBoxPatient);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -445,12 +463,14 @@
         private System.Windows.Forms.ComboBox comboBoxPatient;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicine_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicine_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicine_description;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Measurement;
     }
 }
