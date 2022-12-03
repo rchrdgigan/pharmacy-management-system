@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMedicine));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +44,9 @@
             this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnSaveBarcode = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.checkBoxPrescription = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,6 +68,7 @@
             this.count_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -189,6 +194,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.btnSaveBarcode);
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.checkBoxPrescription);
             this.groupBox1.Controls.Add(this.label8);
@@ -207,10 +215,43 @@
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Location = new System.Drawing.Point(22, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 492);
+            this.groupBox1.Size = new System.Drawing.Size(364, 555);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Medicine Form";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(42, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 16);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Barcode";
+            // 
+            // btnSaveBarcode
+            // 
+            this.btnSaveBarcode.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveBarcode.FlatAppearance.BorderSize = 0;
+            this.btnSaveBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveBarcode.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveBarcode.ForeColor = System.Drawing.Color.White;
+            this.btnSaveBarcode.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveBarcode.Image")));
+            this.btnSaveBarcode.Location = new System.Drawing.Point(65, 111);
+            this.btnSaveBarcode.Name = "btnSaveBarcode";
+            this.btnSaveBarcode.Size = new System.Drawing.Size(28, 26);
+            this.btnSaveBarcode.TabIndex = 37;
+            this.btnSaveBarcode.UseVisualStyleBackColor = false;
+            this.btnSaveBarcode.Click += new System.EventHandler(this.btnSaveBarcode_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Location = new System.Drawing.Point(102, 81);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(244, 56);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
             // 
             // btnUpdate
             // 
@@ -219,7 +260,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(227, 432);
+            this.btnUpdate.Location = new System.Drawing.Point(227, 510);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(104, 27);
             this.btnUpdate.TabIndex = 32;
@@ -230,7 +271,7 @@
             // checkBoxPrescription
             // 
             this.checkBoxPrescription.AutoSize = true;
-            this.checkBoxPrescription.Location = new System.Drawing.Point(109, 383);
+            this.checkBoxPrescription.Location = new System.Drawing.Point(102, 418);
             this.checkBoxPrescription.Name = "checkBoxPrescription";
             this.checkBoxPrescription.Size = new System.Drawing.Size(137, 20);
             this.checkBoxPrescription.TabIndex = 31;
@@ -240,7 +281,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 261);
+            this.label8.Location = new System.Drawing.Point(29, 312);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 16);
             this.label8.TabIndex = 30;
@@ -248,7 +289,7 @@
             // 
             // richTextBoxDescription
             // 
-            this.richTextBoxDescription.Location = new System.Drawing.Point(109, 258);
+            this.richTextBoxDescription.Location = new System.Drawing.Point(102, 309);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
             this.richTextBoxDescription.Size = new System.Drawing.Size(244, 96);
             this.richTextBoxDescription.TabIndex = 29;
@@ -257,7 +298,7 @@
             // textBoxMeasurement
             // 
             this.textBoxMeasurement.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMeasurement.Location = new System.Drawing.Point(109, 213);
+            this.textBoxMeasurement.Location = new System.Drawing.Point(102, 271);
             this.textBoxMeasurement.Name = "textBoxMeasurement";
             this.textBoxMeasurement.Size = new System.Drawing.Size(244, 21);
             this.textBoxMeasurement.TabIndex = 28;
@@ -265,7 +306,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(54, 216);
+            this.label7.Location = new System.Drawing.Point(47, 274);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 16);
             this.label7.TabIndex = 27;
@@ -274,7 +315,7 @@
             // textBoxDrugName
             // 
             this.textBoxDrugName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDrugName.Location = new System.Drawing.Point(109, 172);
+            this.textBoxDrugName.Location = new System.Drawing.Point(102, 234);
             this.textBoxDrugName.Name = "textBoxDrugName";
             this.textBoxDrugName.Size = new System.Drawing.Size(244, 21);
             this.textBoxDrugName.TabIndex = 26;
@@ -282,7 +323,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 175);
+            this.label6.Location = new System.Drawing.Point(9, 237);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 16);
             this.label6.TabIndex = 25;
@@ -291,7 +332,7 @@
             // comboBoxType
             // 
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(109, 130);
+            this.comboBoxType.Location = new System.Drawing.Point(102, 192);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(244, 24);
             this.comboBoxType.TabIndex = 24;
@@ -301,7 +342,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(69, 133);
+            this.label5.Location = new System.Drawing.Point(62, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 16);
             this.label5.TabIndex = 23;
@@ -311,7 +352,7 @@
             // 
             this.comboBoxCat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxCat.FormattingEnabled = true;
-            this.comboBoxCat.Location = new System.Drawing.Point(109, 89);
+            this.comboBoxCat.Location = new System.Drawing.Point(102, 153);
             this.comboBoxCat.Name = "comboBoxCat";
             this.comboBoxCat.Size = new System.Drawing.Size(244, 24);
             this.comboBoxCat.TabIndex = 22;
@@ -321,7 +362,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 92);
+            this.label4.Location = new System.Drawing.Point(20, 156);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 16);
             this.label4.TabIndex = 21;
@@ -330,16 +371,17 @@
             // textBoxSKU
             // 
             this.textBoxSKU.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSKU.Location = new System.Drawing.Point(109, 43);
+            this.textBoxSKU.Location = new System.Drawing.Point(102, 40);
             this.textBoxSKU.Name = "textBoxSKU";
             this.textBoxSKU.Size = new System.Drawing.Size(244, 21);
             this.textBoxSKU.TabIndex = 20;
+            this.textBoxSKU.TextChanged += new System.EventHandler(this.textBoxSKU_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 46);
+            this.label2.Location = new System.Drawing.Point(67, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 16);
             this.label2.TabIndex = 19;
@@ -352,7 +394,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(38, 432);
+            this.btnCancel.Location = new System.Drawing.Point(38, 510);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 27);
             this.btnCancel.TabIndex = 18;
@@ -367,7 +409,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(227, 432);
+            this.btnSave.Location = new System.Drawing.Point(227, 510);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 27);
             this.btnSave.TabIndex = 17;
@@ -419,6 +461,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,5 +501,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colDel;
         private System.Windows.Forms.Label count_lbl;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnSaveBarcode;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

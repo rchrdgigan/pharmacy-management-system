@@ -263,30 +263,30 @@ namespace Pharmacy_Management_System.form
                         else
                         {
                             createStockOut();
-                            
+
+                            string valueStr = comboBoxPatient.Text;
+                            var vals = valueStr.Split('|')[0];
+                            string _issuing_date = DateTime.Now.ToString("MMMM dd, yyyy");
+                            string _pharmacist = DasboardForm.lbl_pharmacist_name.Text;
+                            string _patient_name = vals;
+                            string _patient_age = textBoxAge.Text;
+                            string _patient_state = comboBoxPatientStatus.Text;
+                            List<PatientMedicineClass> pm_lst = new List<PatientMedicineClass>();
+                            pm_lst.Clear();
+                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            {
+                                PatientMedicineClass pmc = new PatientMedicineClass
+                                {
+                                    gen_name = dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                                    brand_name = dataGridView1.Rows[i].Cells[5].Value.ToString(),
+                                    dosage = dataGridView1.Rows[i].Cells[6].Value.ToString(),
+                                    qty = dataGridView1.Rows[i].Cells[3].Value.ToString(),
+                                };
+                                pm_lst.Add(pmc);
+                            }
+
                             if (comboBoxPatientStatus.Text == "Outpatient")
                             {
-                                string valueStr = comboBoxPatient.Text;
-                                var vals = valueStr.Split('|')[0];
-                                string _issuing_date = DateTime.Now.ToString("MMMM dd, yyyy");
-                                string _pharmacist = DasboardForm.lbl_pharmacist_name.Text;
-                                string _patient_name = vals;
-                                string _patient_age = textBoxAge.Text;
-                                string _patient_state = comboBoxPatientStatus.Text;
-
-                                List<PatientMedicineClass> pm_lst = new List<PatientMedicineClass>();
-                                pm_lst.Clear();
-                                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                                {
-                                    PatientMedicineClass pmc = new PatientMedicineClass
-                                    {
-                                        gen_name = dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                                        brand_name = dataGridView1.Rows[i].Cells[5].Value.ToString(),
-                                        dosage = dataGridView1.Rows[i].Cells[6].Value.ToString(),
-                                        qty = dataGridView1.Rows[i].Cells[3].Value.ToString(),
-                                    };
-                                    pm_lst.Add(pmc);
-                                }
                                 rs.Name = "DataSet1";
                                 rs.Value = pm_lst;
                                 PrintOutpatientFrm pof = new PrintOutpatientFrm();
@@ -307,28 +307,9 @@ namespace Pharmacy_Management_System.form
                             }
                             else
                             {
-                                string valueStr = comboBoxPatient.Text;
-                                var vals = valueStr.Split('|')[0];
-                                string _issuing_date = DateTime.Now.ToString("MMMM dd, yyyy");
-                                string _pharmacist = DasboardForm.lbl_pharmacist_name.Text;
-                                string _patient_name = vals;
-                                string _patient_age = textBoxAge.Text;
-                                string _patient_state = comboBoxPatientStatus.Text;
                                 string _ward_no = textBoxWardNum.Text;
                                 string _bed_no = textBoxBedNum.Text;
-                                List<PatientMedicineClass> pm_lst = new List<PatientMedicineClass>();
-                                pm_lst.Clear();
-                                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                                {
-                                    PatientMedicineClass pmc = new PatientMedicineClass
-                                    {
-                                        gen_name = dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                                        brand_name = dataGridView1.Rows[i].Cells[5].Value.ToString(),
-                                        dosage = dataGridView1.Rows[i].Cells[6].Value.ToString(),
-                                        qty = dataGridView1.Rows[i].Cells[3].Value.ToString(),
-                                    };
-                                    pm_lst.Add(pmc);
-                                }
+
                                 rs.Name = "DataSet1";
                                 rs.Value = pm_lst;
                                 PrintInpatientFrm pif = new PrintInpatientFrm();

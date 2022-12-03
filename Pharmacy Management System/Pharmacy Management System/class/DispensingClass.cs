@@ -65,7 +65,7 @@ namespace Pharmacy_Management_System
                 cmd.Parameters.AddWithValue("@pharmacist_name", pharmacist_name);
                 cmd.ExecuteNonQuery();
                 lastId = cmd.LastInsertedId.ToString();
-                message = "Trasaction Delivery Successfully Added!";
+                message = "Trasaction Dispensing Successfully Added!";
 
             }
             catch (Exception ex)

@@ -219,5 +219,40 @@ namespace Pharmacy_Management_System.ucontroll
         {
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("drug_name like '%" + textBox2.Text + "%'");
         }
+
+        private void textBoxSKU_TextChanged(object sender, EventArgs e)
+        {
+            string barCode = textBoxSKU.Text;
+            try
+            {
+                Zen.Barcode.Code128BarcodeDraw brCode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+                pictureBox1.Image = brCode.Draw(barCode, 56);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void btnSaveBarcode_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (textBoxSKU.Text == dataGridView1.Rows[i].Cells[2].Value.ToString())
+                {
+                    if (pictureBox1.Image == null)
+                        return;
+                    using (SaveFileDialog saveFD = new SaveFileDialog() { Filter = "PNG|*.png" })
+                    {
+                        if (saveFD.ShowDialog() == DialogResult.OK)
+                        {
+                            pictureBox1.Image.Save(saveFD.FileName);
+                        }
+                    }
+                }
+                
+            }
+
+        }
     }
 }
