@@ -20,6 +20,7 @@ namespace Pharmacy_Management_System.form
 
         private void PrintDispensingFrm_Load(object sender, EventArgs e)
         {
+            TransitionAPI.AnimateWindow(this.Handle, 300, TransitionAPI.fadeIN);
             this.Controls.Add(reportViewer1);
             reportViewer1.RefreshReport();
             reportViewer1.Refresh();

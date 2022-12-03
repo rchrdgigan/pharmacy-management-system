@@ -20,6 +20,7 @@ namespace Pharmacy_Management_System.ucontroll
         string cat_id;
         string type_id;
         string _id;
+        bool isRegister = false;
 
         public UCMedicine()
         {
@@ -60,6 +61,7 @@ namespace Pharmacy_Management_System.ucontroll
             checkBoxPrescription.Checked = false;
             btnSave.Visible = true;
             btnUpdate.Visible = false;
+            isRegister = false;
         }
 
         public void loadType()
@@ -233,26 +235,32 @@ namespace Pharmacy_Management_System.ucontroll
 
             }
         }
-
         private void btnSaveBarcode_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 if (textBoxSKU.Text == dataGridView1.Rows[i].Cells[2].Value.ToString())
                 {
-                    if (pictureBox1.Image == null)
-                        return;
-                    using (SaveFileDialog saveFD = new SaveFileDialog() { Filter = "PNG|*.png" })
-                    {
-                        if (saveFD.ShowDialog() == DialogResult.OK)
-                        {
-                            pictureBox1.Image.Save(saveFD.FileName);
-                        }
-                    }
+                    isRegister = true;
                 }
                 
             }
-
+            if (isRegister == true)
+            {
+                if (pictureBox1.Image == null)
+                    return;
+                using (SaveFileDialog saveFD = new SaveFileDialog() { Filter = "PNG|*.png" })
+                {
+                    if (saveFD.ShowDialog() == DialogResult.OK)
+                    {
+                        pictureBox1.Image.Save(saveFD.FileName);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("SKU not registered! Please registered before you save barcode!", "Remember", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

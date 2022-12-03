@@ -97,6 +97,7 @@ namespace Pharmacy_Management_System
 
         private void Loginfrm_Load(object sender, EventArgs e)
         {
+            TransitionAPI.AnimateWindow(this.Handle, 300, TransitionAPI.fadeIN);
             this.passwordTxtBox.KeyPress += new
            System.Windows.Forms.KeyPressEventHandler(CheckEnter);
         }
@@ -107,9 +108,9 @@ namespace Pharmacy_Management_System
             if(progressBar1.Value > 98)
             {
                 timer1.Enabled = false;
+                this.Hide();
                 DasboardForm dsboard = new DasboardForm();
                 dsboard.ShowDialog();
-                this.Hide();
             }
         }
     }

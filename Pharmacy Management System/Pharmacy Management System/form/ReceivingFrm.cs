@@ -56,6 +56,7 @@ namespace Pharmacy_Management_System.form
 
         private void ReceivingFrm_Load(object sender, EventArgs e)
         {
+            TransitionAPI.AnimateWindow(this.Handle, 300, TransitionAPI.fadeIN);
             comboBoxMedicine.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBoxMedicine.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBoxSupplier.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

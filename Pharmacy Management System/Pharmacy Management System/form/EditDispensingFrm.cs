@@ -116,6 +116,7 @@ namespace Pharmacy_Management_System.form
 
         private void EditDispensingFrm_Load(object sender, EventArgs e)
         {
+            TransitionAPI.AnimateWindow(this.Handle, 300, TransitionAPI.fadeIN);
             comboBoxPatient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBoxPatient.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBoxMedicine.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

@@ -72,6 +72,7 @@
     <Compile Include="class\PatientMedicineClass.cs" />
     <Compile Include="class\ReceivingClass.cs" />
     <Compile Include="class\SupplierClass.cs" />
+    <Compile Include="class\TransitionAPI.cs" />
     <Compile Include="class\TypeClass.cs" />
     <Compile Include="class\UserClass.cs" />
     <Compile Include="DasboardForm.cs">

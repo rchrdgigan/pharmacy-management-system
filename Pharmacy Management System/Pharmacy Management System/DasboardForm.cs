@@ -31,6 +31,7 @@ namespace Pharmacy_Management_System
 
         private void DasboardForm_Load(object sender, EventArgs e)
         {
+            TransitionAPI.AnimateWindow(this.Handle, 300, TransitionAPI.fadeIN);
             p_Content = panelContent;
             p_Navigation = panelNavigation;
             b_receiving = btnReceiving;
