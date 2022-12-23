@@ -32,7 +32,7 @@ namespace Pharmacy_Management_System.ucontroll
         {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                var value = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                var value = dataGridView1.Rows[i].Cells[5].Value.ToString();
                 if (int.Parse(value) == 0)
                 {
                     dataGridView1.Rows[i].Cells["StockAvailable"].Style = new DataGridViewCellStyle { ForeColor = Color.White, BackColor = Color.Gray };
