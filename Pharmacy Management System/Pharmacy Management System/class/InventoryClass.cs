@@ -16,7 +16,7 @@ namespace Pharmacy_Management_System
         public void list()
         {
             string query = "";
-            query = "SELECT medicines.id, medicines.drug_name, medicines.measurement, SUM(IFNULL(inventories.qty_in, 0)) as in_stock, SUM(IFNULL(inventories.qty_out, 0)) as out_stock, SUM(IFNULL(inventories.qty_in, 0)) - SUM(IFNULL(inventories.qty_out, 0)) as total_stocks FROM `medicines` INNER JOIN inventories ON inventories.medicine_id = medicines.id GROUP BY medicines.id, medicines.drug_name, medicines.measurement";
+            query = "SELECT medicines.id, medicines.sku, medicines.drug_name, medicines.measurement, SUM(IFNULL(inventories.qty_in, 0)) as in_stock, SUM(IFNULL(inventories.qty_out, 0)) as out_stock, SUM(IFNULL(inventories.qty_in, 0)) - SUM(IFNULL(inventories.qty_out, 0)) as total_stocks FROM `medicines` INNER JOIN inventories ON inventories.medicine_id = medicines.id GROUP BY medicines.id, medicines.sku, medicines.drug_name, medicines.measurement";
             MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             msda.Fill(dt);
@@ -26,7 +26,7 @@ namespace Pharmacy_Management_System
         public void listSpecific(int id)
         {
             string query = "";
-            query = "SELECT medicines.id, medicines.drug_name, medicines.measurement, SUM(IFNULL(inventories.qty_in, 0)) as in_stock, SUM(IFNULL(inventories.qty_out, 0)) as out_stock, SUM(IFNULL(inventories.qty_in, 0)) - SUM(IFNULL(inventories.qty_out, 0)) as total_stocks FROM `medicines` INNER JOIN inventories ON inventories.medicine_id = medicines.id  WHERE medicines.id='" + id + "' GROUP BY medicines.id, medicines.drug_name, medicines.measurement";
+            query = "SELECT medicines.id, medicines.sku, medicines.drug_name, medicines.measurement, SUM(IFNULL(inventories.qty_in, 0)) as in_stock, SUM(IFNULL(inventories.qty_out, 0)) as out_stock, SUM(IFNULL(inventories.qty_in, 0)) - SUM(IFNULL(inventories.qty_out, 0)) as total_stocks FROM `medicines` INNER JOIN inventories ON inventories.medicine_id = medicines.id  WHERE medicines.id='" + id + "' GROUP BY medicines.id, medicines.sku, medicines.drug_name, medicines.measurement";
             MySqlDataAdapter msda = new MySqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             msda.Fill(dt);

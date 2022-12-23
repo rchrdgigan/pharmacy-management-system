@@ -101,10 +101,10 @@
             this.linkLabel3.LinkColor = System.Drawing.Color.White;
             this.linkLabel3.Location = new System.Drawing.Point(50, 113);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(76, 16);
+            this.linkLabel3.Size = new System.Drawing.Size(113, 16);
             this.linkLabel3.TabIndex = 22;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "View Patient";
+            this.linkLabel3.Text = "View Patient Today";
             this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // pictureBox1
@@ -144,9 +144,9 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(3, 28);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(95, 18);
+            this.label14.Size = new System.Drawing.Size(144, 18);
             this.label14.TabIndex = 18;
-            this.label14.Text = "Total Patient";
+            this.label14.Text = "Total Patient Today";
             // 
             // groupBox1
             // 
@@ -252,10 +252,10 @@
             this.linkLabel2.LinkColor = System.Drawing.Color.White;
             this.linkLabel2.Location = new System.Drawing.Point(50, 113);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(90, 16);
+            this.linkLabel2.Size = new System.Drawing.Size(127, 16);
             this.linkLabel2.TabIndex = 21;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "View Received";
+            this.linkLabel2.Text = "View Received Today";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // pictureBox3
@@ -336,10 +336,10 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(50, 113);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(93, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(130, 16);
             this.linkLabel1.TabIndex = 20;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "View Dispensing";
+            this.linkLabel1.Text = "View Dispensing Today";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // pictureBox2

@@ -130,7 +130,7 @@ namespace Pharmacy_Management_System
                 con.Open();
                 using (var cmd = new MySqlCommand())
                 {
-                    cmd.CommandText = "SELECT COUNT(*) FROM patients";
+                    cmd.CommandText = "SELECT COUNT(*) FROM patients WHERE created_at LIKE '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%'";
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = con;
                     count = Convert.ToInt32(cmd.ExecuteScalar());

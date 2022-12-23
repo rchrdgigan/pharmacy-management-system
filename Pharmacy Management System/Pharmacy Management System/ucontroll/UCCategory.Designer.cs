@@ -115,9 +115,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 23);
+            this.label1.Size = new System.Drawing.Size(189, 23);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Medicine Category List";
+            this.label1.Text = "Brand Category List";
             // 
             // btnSave
             // 
@@ -146,7 +146,7 @@
             this.groupBox1.Size = new System.Drawing.Size(364, 190);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Medicine Category Form";
+            this.groupBox1.Text = "Brand Category Form";
             // 
             // btnUpdate
             // 

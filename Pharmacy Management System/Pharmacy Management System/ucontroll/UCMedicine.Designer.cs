@@ -66,6 +66,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.count_lbl = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -249,7 +251,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Location = new System.Drawing.Point(102, 81);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(244, 56);
+            this.pictureBox1.Size = new System.Drawing.Size(244, 84);
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
@@ -271,7 +273,7 @@
             // checkBoxPrescription
             // 
             this.checkBoxPrescription.AutoSize = true;
-            this.checkBoxPrescription.Location = new System.Drawing.Point(102, 418);
+            this.checkBoxPrescription.Location = new System.Drawing.Point(102, 449);
             this.checkBoxPrescription.Name = "checkBoxPrescription";
             this.checkBoxPrescription.Size = new System.Drawing.Size(137, 20);
             this.checkBoxPrescription.TabIndex = 31;
@@ -281,7 +283,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 312);
+            this.label8.Location = new System.Drawing.Point(29, 343);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 16);
             this.label8.TabIndex = 30;
@@ -289,7 +291,7 @@
             // 
             // richTextBoxDescription
             // 
-            this.richTextBoxDescription.Location = new System.Drawing.Point(102, 309);
+            this.richTextBoxDescription.Location = new System.Drawing.Point(102, 340);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
             this.richTextBoxDescription.Size = new System.Drawing.Size(244, 96);
             this.richTextBoxDescription.TabIndex = 29;
@@ -298,7 +300,7 @@
             // textBoxMeasurement
             // 
             this.textBoxMeasurement.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMeasurement.Location = new System.Drawing.Point(102, 271);
+            this.textBoxMeasurement.Location = new System.Drawing.Point(102, 302);
             this.textBoxMeasurement.Name = "textBoxMeasurement";
             this.textBoxMeasurement.Size = new System.Drawing.Size(244, 21);
             this.textBoxMeasurement.TabIndex = 28;
@@ -306,7 +308,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(47, 274);
+            this.label7.Location = new System.Drawing.Point(47, 305);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 16);
             this.label7.TabIndex = 27;
@@ -315,7 +317,7 @@
             // textBoxDrugName
             // 
             this.textBoxDrugName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDrugName.Location = new System.Drawing.Point(102, 234);
+            this.textBoxDrugName.Location = new System.Drawing.Point(102, 265);
             this.textBoxDrugName.Name = "textBoxDrugName";
             this.textBoxDrugName.Size = new System.Drawing.Size(244, 21);
             this.textBoxDrugName.TabIndex = 26;
@@ -323,7 +325,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 237);
+            this.label6.Location = new System.Drawing.Point(9, 268);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 16);
             this.label6.TabIndex = 25;
@@ -332,7 +334,7 @@
             // comboBoxType
             // 
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(102, 192);
+            this.comboBoxType.Location = new System.Drawing.Point(102, 223);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(244, 24);
             this.comboBoxType.TabIndex = 24;
@@ -342,7 +344,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 195);
+            this.label5.Location = new System.Drawing.Point(62, 226);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 16);
             this.label5.TabIndex = 23;
@@ -352,7 +354,7 @@
             // 
             this.comboBoxCat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxCat.FormattingEnabled = true;
-            this.comboBoxCat.Location = new System.Drawing.Point(102, 153);
+            this.comboBoxCat.Location = new System.Drawing.Point(102, 184);
             this.comboBoxCat.Name = "comboBoxCat";
             this.comboBoxCat.Size = new System.Drawing.Size(244, 24);
             this.comboBoxCat.TabIndex = 22;
@@ -362,7 +364,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 156);
+            this.label4.Location = new System.Drawing.Point(20, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 16);
             this.label4.TabIndex = 21;
@@ -421,7 +423,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(529, 31);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(533, 21);
+            this.textBox2.Size = new System.Drawing.Size(230, 21);
             this.textBox2.TabIndex = 30;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -443,10 +445,29 @@
             this.count_lbl.Size = new System.Drawing.Size(0, 16);
             this.count_lbl.TabIndex = 31;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(765, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 16);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Search sku";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(836, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(226, 21);
+            this.textBox1.TabIndex = 33;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // UCMedicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.count_lbl);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -504,5 +525,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSaveBarcode;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

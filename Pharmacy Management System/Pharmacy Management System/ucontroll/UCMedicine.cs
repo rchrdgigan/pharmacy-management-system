@@ -99,8 +99,11 @@ namespace Pharmacy_Management_System.ucontroll
             type_id = tc._typeid;
         }
 
+        bool isExistSku = false;
+
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
             if (!string.IsNullOrEmpty(textBoxSKU.Text) || !string.IsNullOrEmpty(comboBoxCat.Text) || !string.IsNullOrEmpty(comboBoxType.Text) || !string.IsNullOrEmpty(textBoxDrugName.Text) || !string.IsNullOrEmpty(textBoxMeasurement.Text) || !string.IsNullOrEmpty(richTextBoxDescription.Text))
             {
                 mc.sku = textBoxSKU.Text;
@@ -117,11 +120,27 @@ namespace Pharmacy_Management_System.ucontroll
                 {
                     mc.prescription = false;
                 }
-                mc.create();
-                ic.create(int.Parse(mc.modifId));
-                MessageBox.Show("" + mc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clearText();
-                loadData();
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (mc.sku == dataGridView1.Rows[i].Cells[2].Value.ToString())
+                    {
+                        isExistSku = true;
+                    }
+                }
+                if (isExistSku == false)
+                {
+                    mc.create();
+                    ic.create(int.Parse(mc.modifId));
+                    MessageBox.Show("" + mc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearText();
+                    loadData();
+                }
+                else
+                {
+                    MessageBox.Show("Sku medicine already exisist!", "Remember", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    isExistSku = false;
+                }
+               
             }
             else
             {
@@ -228,7 +247,7 @@ namespace Pharmacy_Management_System.ucontroll
             try
             {
                 Zen.Barcode.Code128BarcodeDraw brCode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-                pictureBox1.Image = brCode.Draw(barCode, 56);
+                pictureBox1.Image = brCode.Draw(barCode, 81);
             }
             catch (Exception)
             {
@@ -260,6 +279,17 @@ namespace Pharmacy_Management_System.ucontroll
             else
             {
                 MessageBox.Show("SKU not registered! Please registered before you save barcode!", "Remember", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox1.Text)) {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("sku = '" + Int64.Parse(textBox1.Text).ToString() + "'");
+            }
+            else
+            {
+                loadData();
             }
         }
     }

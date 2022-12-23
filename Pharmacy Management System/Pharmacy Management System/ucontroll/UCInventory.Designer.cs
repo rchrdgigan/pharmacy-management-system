@@ -30,14 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.count_lbl = new System.Windows.Forms.Label();
+            this.sku = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drug_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.measurement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.count_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sku,
             this.drug_name,
             this.measurement,
             this.StockIn,
@@ -68,46 +70,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1040, 555);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // drug_name
-            // 
-            this.drug_name.DataPropertyName = "drug_name";
-            this.drug_name.HeaderText = "Drug Name";
-            this.drug_name.Name = "drug_name";
-            this.drug_name.ReadOnly = true;
-            this.drug_name.Width = 300;
-            // 
-            // measurement
-            // 
-            this.measurement.DataPropertyName = "measurement";
-            this.measurement.HeaderText = "Measurement";
-            this.measurement.Name = "measurement";
-            this.measurement.ReadOnly = true;
-            this.measurement.Width = 150;
-            // 
-            // StockIn
-            // 
-            this.StockIn.DataPropertyName = "in_stock";
-            this.StockIn.HeaderText = "Stock In";
-            this.StockIn.Name = "StockIn";
-            this.StockIn.ReadOnly = true;
-            this.StockIn.Width = 150;
-            // 
-            // StockOut
-            // 
-            this.StockOut.DataPropertyName = "out_stock";
-            this.StockOut.HeaderText = "Stock Out";
-            this.StockOut.Name = "StockOut";
-            this.StockOut.ReadOnly = true;
-            this.StockOut.Width = 150;
-            // 
-            // StockAvailable
-            // 
-            this.StockAvailable.DataPropertyName = "total_stocks";
-            this.StockAvailable.HeaderText = "Stock Available";
-            this.StockAvailable.Name = "StockAvailable";
-            this.StockAvailable.ReadOnly = true;
-            this.StockAvailable.Width = 250;
             // 
             // label2
             // 
@@ -135,6 +97,53 @@
             this.count_lbl.Size = new System.Drawing.Size(0, 16);
             this.count_lbl.TabIndex = 32;
             // 
+            // sku
+            // 
+            this.sku.DataPropertyName = "sku";
+            this.sku.HeaderText = "SKU";
+            this.sku.Name = "sku";
+            this.sku.ReadOnly = true;
+            this.sku.Width = 150;
+            // 
+            // drug_name
+            // 
+            this.drug_name.DataPropertyName = "drug_name";
+            this.drug_name.HeaderText = "Generic Name";
+            this.drug_name.Name = "drug_name";
+            this.drug_name.ReadOnly = true;
+            this.drug_name.Width = 200;
+            // 
+            // measurement
+            // 
+            this.measurement.DataPropertyName = "measurement";
+            this.measurement.HeaderText = "Measurement";
+            this.measurement.Name = "measurement";
+            this.measurement.ReadOnly = true;
+            // 
+            // StockIn
+            // 
+            this.StockIn.DataPropertyName = "in_stock";
+            this.StockIn.HeaderText = "Stock In";
+            this.StockIn.Name = "StockIn";
+            this.StockIn.ReadOnly = true;
+            this.StockIn.Width = 150;
+            // 
+            // StockOut
+            // 
+            this.StockOut.DataPropertyName = "out_stock";
+            this.StockOut.HeaderText = "Stock Out";
+            this.StockOut.Name = "StockOut";
+            this.StockOut.ReadOnly = true;
+            this.StockOut.Width = 150;
+            // 
+            // StockAvailable
+            // 
+            this.StockAvailable.DataPropertyName = "total_stocks";
+            this.StockAvailable.HeaderText = "Stock Available";
+            this.StockAvailable.Name = "StockAvailable";
+            this.StockAvailable.ReadOnly = true;
+            this.StockAvailable.Width = 250;
+            // 
             // UCInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -161,11 +170,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label count_lbl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sku;
         private System.Windows.Forms.DataGridViewTextBoxColumn drug_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn measurement;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockAvailable;
-        private System.Windows.Forms.Label count_lbl;
     }
 }

@@ -36,11 +36,11 @@ namespace Pharmacy_Management_System.ucontroll
                 if (int.Parse(value) == 0)
                 {
                     dataGridView1.Rows[i].Cells["StockAvailable"].Style = new DataGridViewCellStyle { ForeColor = Color.White, BackColor = Color.Gray };
-                }else if (int.Parse(value) < 20)
+                }else if (int.Parse(value) >= 21 && int.Parse(value) <= 30)
                 {
                     dataGridView1.Rows[i].Cells["StockAvailable"].Style = new DataGridViewCellStyle { ForeColor = Color.White, BackColor = Color.Red };
                 }
-                else if(int.Parse(value) <= 50)
+                else if(int.Parse(value) >= 31 && int.Parse(value) <= 50)
                 {
                     dataGridView1.Rows[i].Cells["StockAvailable"].Style = new DataGridViewCellStyle { ForeColor = Color.White, BackColor = Color.Orange };
                 }
