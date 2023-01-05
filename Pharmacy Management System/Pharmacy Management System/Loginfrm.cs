@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Pharmacy_Management_System
 {
@@ -57,27 +58,52 @@ namespace Pharmacy_Management_System
                 }
                 else
                 {
-                    uc.username = usernameTxtBox.Text;
-                    uc.password = passwordTxtBox.Text;
-                    bool verify = uc.userVerification();
-                    if (verify == true)
+                    var isHasSymbols = new Regex(@"^[a-zA-Z0-9/_]+$");
+                    if (!isHasSymbols.IsMatch(usernameTxtBox.Text))
                     {
-                        error_lbl.Visible = false;
-                        _role = uc.role;
-                        _username = uc.username;
-                        _fname = uc.fname;
-                        _log_id = uc._id;
-                        progressBar1.Visible = true;
-                        timer1.Enabled = true;
+                        MessageBox.Show("Username allowed underscore symbol only!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (usernameTxtBox.Text.Length < 6)
+                    {
+                        MessageBox.Show("Username must be 6 characters and above!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        error_lbl.Visible = true;
-                        usernameTxtBox.Clear();
-                        passwordTxtBox.Clear();
-                        usernameTxtBox.BackColor = DefaultBackColor;
-                        passwordTxtBox.BackColor = DefaultBackColor;
+                        if (!isHasSymbols.IsMatch(passwordTxtBox.Text))
+                        {
+                            MessageBox.Show("Password allowed underscore symbol only!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if (passwordTxtBox.Text.Length < 7)
+                        {
+                            MessageBox.Show("Password must be 7 to 16 length!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            uc.username = usernameTxtBox.Text;
+                            uc.password = passwordTxtBox.Text;
+                            bool verify = uc.userVerification();
+                            if (verify == true)
+                            {
+                                error_lbl.Visible = false;
+                                _role = uc.role;
+                                _username = uc.username;
+                                _fname = uc.fname;
+                                _log_id = uc._id;
+                                progressBar1.Visible = true;
+                                timer1.Enabled = true;
+                            }
+                            else
+                            {
+                                error_lbl.Visible = true;
+                                usernameTxtBox.Clear();
+                                passwordTxtBox.Clear();
+                                usernameTxtBox.BackColor = DefaultBackColor;
+                                passwordTxtBox.BackColor = DefaultBackColor;
+                            }
+
+                        }
                     }
+                   
                 }
 
             }

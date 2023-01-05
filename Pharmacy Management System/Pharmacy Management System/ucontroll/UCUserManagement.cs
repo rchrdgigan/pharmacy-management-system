@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Pharmacy_Management_System.ucontroll
 {
@@ -49,22 +50,45 @@ namespace Pharmacy_Management_System.ucontroll
             {
                 if (passwordTxtBox.Text == confirmationTxtBox.Text)
                 {
-                    uc.fname = fnameTxtBox.Text;
-                    uc.contact = cpnumTxtBox.Text;
-                    uc.address = addressTxtBox.Text;
-                    uc.username = unameTxtBox.Text;
-                    uc.password = passwordTxtBox.Text;
-                    bool IsExist = uc.IsUserExist();
-                    if (IsExist == true)
+                    var isHasSymbols = new Regex(@"^[a-zA-Z0-9/_]+$");
+                    if (!isHasSymbols.IsMatch(unameTxtBox.Text))
                     {
-                        MessageBox.Show("" + uc.message, "Register Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Username allowed underscore symbol only!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (unameTxtBox.Text.Length < 6)
+                    {
+                        MessageBox.Show("Username must be 6 characters and above!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        uc.create();
-                        MessageBox.Show(""+ uc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        clearText();
-                        loadData();
+                        if (!isHasSymbols.IsMatch(passwordTxtBox.Text))
+                        {
+                            MessageBox.Show("Password allowed underscore symbol only!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if (passwordTxtBox.Text.Length < 7)
+                        {
+                            MessageBox.Show("Password must be 7 to 16 length!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            uc.fname = fnameTxtBox.Text;
+                            uc.contact = cpnumTxtBox.Text;
+                            uc.address = addressTxtBox.Text;
+                            uc.username = unameTxtBox.Text;
+                            uc.password = passwordTxtBox.Text;
+                            bool IsExist = uc.IsUserExist();
+                            if (IsExist == true)
+                            {
+                                MessageBox.Show("" + uc.message, "Register Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                uc.create();
+                                MessageBox.Show("" + uc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                clearText();
+                                loadData();
+                            }
+                        }
                     }
 
                 }
@@ -119,15 +143,39 @@ namespace Pharmacy_Management_System.ucontroll
             {
                 if (passwordTxtBox.Text == confirmationTxtBox.Text)
                 {
-                    uc.fname = fnameTxtBox.Text;
-                    uc.contact = cpnumTxtBox.Text;
-                    uc.address = addressTxtBox.Text;
-                    uc.username = unameTxtBox.Text;
-                    uc.password = passwordTxtBox.Text;
-                    uc.update(int.Parse(_id));
-                    MessageBox.Show("" + uc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearText();
-                    loadData();
+
+                    var isHasSymbols = new Regex(@"^[a-zA-Z0-9/_]+$");
+                    if (!isHasSymbols.IsMatch(unameTxtBox.Text))
+                    {
+                        MessageBox.Show("Username allowed underscore symbol only!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (unameTxtBox.Text.Length < 6)
+                    {
+                        MessageBox.Show("Username must be 6 characters and above!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        if (!isHasSymbols.IsMatch(passwordTxtBox.Text))
+                        {
+                            MessageBox.Show("Password allowed underscore symbol only!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if (passwordTxtBox.Text.Length < 7)
+                        {
+                            MessageBox.Show("Password must be 7 to 16 length!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            uc.fname = fnameTxtBox.Text;
+                            uc.contact = cpnumTxtBox.Text;
+                            uc.address = addressTxtBox.Text;
+                            uc.username = unameTxtBox.Text;
+                            uc.password = passwordTxtBox.Text;
+                            uc.update(int.Parse(_id));
+                            MessageBox.Show("" + uc.message, "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            clearText();
+                            loadData();
+                        }
+                    }
                 }
                 else
                 {

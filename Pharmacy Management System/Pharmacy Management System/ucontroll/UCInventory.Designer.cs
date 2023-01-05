@@ -30,15 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.count_lbl = new System.Windows.Forms.Label();
             this.sku = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drug_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.measurement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.count_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,32 +70,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1040, 555);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(683, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Search";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(735, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 21);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // count_lbl
-            // 
-            this.count_lbl.AutoSize = true;
-            this.count_lbl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.count_lbl.Location = new System.Drawing.Point(1081, 0);
-            this.count_lbl.Name = "count_lbl";
-            this.count_lbl.Size = new System.Drawing.Size(0, 16);
-            this.count_lbl.TabIndex = 32;
             // 
             // sku
             // 
@@ -143,6 +117,32 @@
             this.StockAvailable.Name = "StockAvailable";
             this.StockAvailable.ReadOnly = true;
             this.StockAvailable.Width = 250;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(683, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Search";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(735, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(325, 21);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // count_lbl
+            // 
+            this.count_lbl.AutoSize = true;
+            this.count_lbl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.count_lbl.Location = new System.Drawing.Point(1081, 0);
+            this.count_lbl.Name = "count_lbl";
+            this.count_lbl.Size = new System.Drawing.Size(0, 16);
+            this.count_lbl.TabIndex = 32;
             // 
             // UCInventory
             // 
